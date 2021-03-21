@@ -1,6 +1,8 @@
-﻿namespace Reverse.Services
+﻿using Reverse.Services.Interfaces;
+
+namespace Reverse.Services
 {
-    public class MessageService
+    public class MessageService : IMessageService
     {
         public string GetLoginErrorMessage() =>
             "Указаны неверные учётные данные.";

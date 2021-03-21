@@ -6,7 +6,7 @@ using Reverse_Analytics.Views;
 
 namespace Reverse.Modules.ModuleNames
 {
-    class ModuleNameModule : IModule
+    public class ModuleNameModule : IModule
     {
         private readonly IRegionManager _regionManager;
 

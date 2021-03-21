@@ -20,12 +20,16 @@
     </PackageReference>
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+    <ProjectReference Include="..\Reverse.Modules.Forms\Reverse.Modules.Forms.csproj" />
+    <ProjectReference Include="..\Reverse.Modules.ModuleNames\Reverse.Modules.ModuleNames.csproj" />
+    <ProjectReference Include="..\Reverse.Services.Interfaces\Reverse.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Reverse.Services\Reverse.Services.csproj" />
+    <ProjectReference Include="..\Reverse_Analytics.Core\Reverse_Analytics.Core.csproj" />
   </ItemGroup>
 
 </Project>

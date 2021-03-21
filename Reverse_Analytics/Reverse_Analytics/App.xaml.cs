@@ -1,17 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Prism.Ioc;
+using Prism.Modularity;
 using System.Windows;
+using Reverse.Services;
+using Reverse.Services.Interfaces;
+using Reverse.Modules.ModuleNames;
+using System.ComponentModel;
+using Reverse.Modules.Forms;
 
 namespace Reverse_Analytics
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
+        protected override Window CreateShell()
+        {
+            return Container.Resolve<MainWindow>();
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterSingleton<IMessageService, MessageService>();
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<ModuleNameModule>();
+            moduleCatalog.AddModule<FormsModule>();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            //ConfigureUnhandledExceptionHandling();
+        }
     }
 }

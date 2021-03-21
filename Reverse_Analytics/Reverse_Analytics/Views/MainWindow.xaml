@@ -3,13 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        xmlns:core="clr-namespace:Trino.Core;assembly=Trino.Core"
+        xmlns:core="clr-namespace:Reverse_Analytics.Core;assembly=Reverse_Analytics.Core"
         Title="{Binding Title}"
         WindowState="Maximized"
         MinHeight="700"
         MinWidth="1000"
         Closing="OnClosingAction">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
+        <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}"/>
     </Grid>
 </Window>

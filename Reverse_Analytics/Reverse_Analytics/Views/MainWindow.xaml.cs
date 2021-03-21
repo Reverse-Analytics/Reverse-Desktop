@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using Infrastructure.Models;
 
 namespace Reverse_Analytics
@@ -10,10 +11,12 @@ namespace Reverse_Analytics
     {
         public MainWindow()
         {
-            InitializeComponent();
-            Client c = new Client();
+            InitializeComponent();            
+        }
 
-            System.Console.WriteLine(c);
+        private void OnClosingAction(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

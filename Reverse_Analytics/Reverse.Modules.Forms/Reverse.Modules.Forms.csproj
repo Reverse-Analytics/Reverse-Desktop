@@ -6,12 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+    <ProjectReference Include="..\Reverse.Models\Reverse.Models.csproj" />
+    <ProjectReference Include="..\Reverse_Analytics.Core\Reverse_Analytics.Core.csproj" />
   </ItemGroup>
 
 </Project>
