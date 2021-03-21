@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{43
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Services", "Reverse.Services\Reverse.Services.csproj", "{B04937ED-A52A-43EB-867A-D6AE12DC21DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Services.Interfaces", "Reverse.Services.Interfaces\Reverse.Services.Interfaces.csproj", "{710024BA-B2CA-4C33-8D2F-8B2FF9FD7895}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{B04937ED-A52A-43EB-867A-D6AE12DC21DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B04937ED-A52A-43EB-867A-D6AE12DC21DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B04937ED-A52A-43EB-867A-D6AE12DC21DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710024BA-B2CA-4C33-8D2F-8B2FF9FD7895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710024BA-B2CA-4C33-8D2F-8B2FF9FD7895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710024BA-B2CA-4C33-8D2F-8B2FF9FD7895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710024BA-B2CA-4C33-8D2F-8B2FF9FD7895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{508DED7F-95E8-4741-BCAF-FA57860521F7} = {71D25516-000F-4DB1-85F5-5B2EAC8AABC1}
 		{8AE82008-67F1-495B-8829-EA80E7C42582} = {71D25516-000F-4DB1-85F5-5B2EAC8AABC1}
 		{B04937ED-A52A-43EB-867A-D6AE12DC21DD} = {43EFD90A-340E-4BC8-9E27-98E67D3E661C}
+		{710024BA-B2CA-4C33-8D2F-8B2FF9FD7895} = {43EFD90A-340E-4BC8-9E27-98E67D3E661C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C2310C0-6CFD-4AA6-B571-74ADB6595E1E}
