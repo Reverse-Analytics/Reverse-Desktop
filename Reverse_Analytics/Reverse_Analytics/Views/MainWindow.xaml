@@ -1,0 +1,15 @@
+﻿<Window x:Class="Reverse_Analytics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:core="clr-namespace:Trino.Core;assembly=Trino.Core"
+        Title="{Binding Title}"
+        WindowState="Maximized"
+        MinHeight="700"
+        MinWidth="1000"
+        Closing="OnClosingAction">
+    <Grid>
+        
+    </Grid>
+</Window>
