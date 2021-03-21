@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Reverse_Analytics.Core
 {
-    class FormNames
+    public class FormNames
     {
     }
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Reverse_Analytics.Core
+namespace Reverse.Modules.ModuleNames.ViewModels
 {
-    public class ViewNames
+    class SidebarViewModel
     {
     }
 }

@@ -3,7 +3,7 @@ using System;
 
 namespace Reverse_Analytics.Core.MVVM
 {
-    class RegionViewModelBase : ViewModelBase, INavigationAware, IConfirmNavigationRequest
+    public class RegionViewModelBase : ViewModelBase, INavigationAware, IConfirmNavigationRequest
     {
         protected IRegionManager RegionManager { get; private set; }
 

@@ -3,7 +3,7 @@ using Prism.Navigation;
 
 namespace Reverse_Analytics.Core.MVVM
 {
-    class ViewModelBase : BindableBase, IDestructible
+    public class ViewModelBase : BindableBase, IDestructible
     {
         protected ViewModelBase()
         {
