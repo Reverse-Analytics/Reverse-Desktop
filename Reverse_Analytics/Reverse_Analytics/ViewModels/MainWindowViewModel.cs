@@ -1,12 +1,15 @@
 ﻿using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Reverse_Analytics.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
+        private string _title = "Trino";
+        public string Title
+        {
+            get { return _title; }
+            set { SetProperty(ref _title, value); }
+        }
         public MainWindowViewModel()
         {
         }

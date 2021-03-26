@@ -16,7 +16,7 @@ namespace Reverse_Analytics
 
         private void OnClosingAction(object sender, CancelEventArgs e)
         {
-            e.Cancel = true;
+            //e.Cancel = true;
         }
     }
 }

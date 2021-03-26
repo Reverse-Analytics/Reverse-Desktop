@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Reverse_Analytics.Core
+﻿namespace Reverse_Analytics.Core
 {
     public class FormNames
     {
+        public const string Clients = "Clients";
+        public const string Suppliers = "Suppliers";
     }
 }
