@@ -16,6 +16,6 @@
         </Grid.ColumnDefinitions>
 
         <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
-        <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}"/>
+        <ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}"/>
     </Grid>
 </Window>
