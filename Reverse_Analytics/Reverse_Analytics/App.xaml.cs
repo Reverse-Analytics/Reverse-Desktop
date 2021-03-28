@@ -4,7 +4,6 @@ using System.Windows;
 using Reverse.Services;
 using Reverse.Services.Interfaces;
 using Reverse.Modules.ModuleNames;
-using System.ComponentModel;
 using Reverse.Modules.Forms;
 
 namespace Reverse_Analytics

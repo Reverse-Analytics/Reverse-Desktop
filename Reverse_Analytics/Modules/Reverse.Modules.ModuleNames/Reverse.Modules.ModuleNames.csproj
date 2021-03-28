@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Reverse.Models\Reverse.Models.csproj" />
+    <ProjectReference Include="..\..\Reverse_Analytics.Core\Reverse_Analytics.Core.csproj" />
+    <ProjectReference Include="..\..\Services\Reverse.Services.Interfaces\Reverse.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Services\Reverse.Services\Reverse.Services.csproj" />
+  </ItemGroup>
+
+</Project>
