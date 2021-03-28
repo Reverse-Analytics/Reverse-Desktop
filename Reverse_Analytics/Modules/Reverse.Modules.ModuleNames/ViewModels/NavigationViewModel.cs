@@ -2,7 +2,7 @@
 using Prism.Regions;
 using Reverse_Analytics.Core;
 using Reverse_Analytics.Core.MVVM;
-using Reverse_Analytics.Core.Resources;
+using Reverse.Core.Resources;
 using System.Linq;
 
 namespace Reverse.Modules.ModuleNames.ViewModels

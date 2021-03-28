@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Windows;
-using Infrastructure.Models;
 
 namespace Reverse_Analytics
 {

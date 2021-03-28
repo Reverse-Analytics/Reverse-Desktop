@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse_Analytics", "Reverse_Analytics\Reverse_Analytics.csproj", "{BB64205F-AA76-438D-AB2E-AA5ADFA483C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse_Analytics.Core", "Reverse_Analytics.Core\Reverse_Analytics.Core.csproj", "{7255A8DF-C9C6-45E7-93E4-B928A99C413C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Core", "Reverse_Analytics.Core\Reverse.Core.csproj", "{7255A8DF-C9C6-45E7-93E4-B928A99C413C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{53F10B28-0379-42D4-A147-45C9B3A3799E}"
 EndProject

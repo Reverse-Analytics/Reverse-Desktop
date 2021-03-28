@@ -28,7 +28,7 @@
     <ProjectReference Include="..\Infrastructure\Reverse.Models\Reverse.Models.csproj" />
     <ProjectReference Include="..\Modules\Reverse.Modules.Forms\Reverse.Modules.Forms.csproj" />
     <ProjectReference Include="..\Modules\Reverse.Modules.ModuleNames\Reverse.Modules.ModuleNames.csproj" />
-    <ProjectReference Include="..\Reverse_Analytics.Core\Reverse_Analytics.Core.csproj" />
+    <ProjectReference Include="..\Reverse_Analytics.Core\Reverse.Core.csproj" />
     <ProjectReference Include="..\Services\Reverse.Services.Interfaces\Reverse.Services.Interfaces.csproj" />
     <ProjectReference Include="..\Services\Reverse.Services\Reverse.Services.csproj" />
   </ItemGroup>
