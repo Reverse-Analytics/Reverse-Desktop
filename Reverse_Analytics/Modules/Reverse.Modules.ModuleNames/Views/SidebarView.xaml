@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="200">
+             mc:Ignorable="d" >
     <UserControl.Resources>
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
         <Style TargetType="Button">
@@ -44,11 +43,11 @@
             </StackPanel.Resources>
 
             <Ellipse Margin="5,10,5,15"
-                     Width="90" Height="65" 
+                     Width="90" Height="74" 
                      Fill="#C4C4C4"/>
 
             <StackPanel Orientation="Horizontal" x:Name="firstStack"
-                        Margin="5,0,0,10"
+                        Margin="5,50,0,10"
                         GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 

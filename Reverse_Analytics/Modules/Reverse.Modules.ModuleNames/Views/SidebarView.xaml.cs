@@ -37,13 +37,14 @@ namespace Reverse_Analytics.Views
             if (previousFocusedElement != null)
             {
                 previousFocusedElement.Children[0].Visibility = Visibility.Hidden;
-                (previousFocusedElement.Children[1] as Button).Background = new SolidColorBrush(Color.FromRgb(54, 55, 64));
+                previousFocusedElement.Background = new SolidColorBrush(Color.FromRgb(54, 55, 64));
             }
 
             if (sender is StackPanel clickedPanel)
             {
                 clickedPanel.Children[0].Visibility = Visibility.Visible;
-                (clickedPanel.Children[1] as Button).Background = new SolidColorBrush(Color.FromRgb(62, 64, 73));
+                //(clickedPanel.Children[1] as Button).Background = new SolidColorBrush(Color.FromRgb(62, 64, 73));
+                (clickedPanel as StackPanel).Background = new SolidColorBrush(Color.FromRgb(62, 64, 73));
 
                 previousFocusedElement = clickedPanel;
             }

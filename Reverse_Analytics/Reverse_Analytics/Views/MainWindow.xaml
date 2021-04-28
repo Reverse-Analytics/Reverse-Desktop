@@ -11,11 +11,11 @@
         Closing="OnClosingAction">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        
+
         <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
-        <ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}"/>
+        
     </Grid>
 </Window>

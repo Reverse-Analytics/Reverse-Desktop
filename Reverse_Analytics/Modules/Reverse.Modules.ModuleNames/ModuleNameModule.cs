@@ -17,7 +17,7 @@ namespace Reverse.Modules.ModuleNames
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate(RegionNames.ContentRegion, "LoginView");
+            _regionManager.RequestNavigate(RegionNames.SideBarRegion, ViewNames.SidebarView);
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
