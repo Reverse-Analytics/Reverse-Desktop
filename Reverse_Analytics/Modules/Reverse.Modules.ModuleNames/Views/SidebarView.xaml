@@ -3,14 +3,187 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Reverse_Analytics.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="200">
+             d:DesignHeight="500" d:DesignWidth="200">
+    <UserControl.Resources>
+        <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+        <Style TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="0"
+                            Padding="4,2"
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#3E4049"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <StackPanel>
-            <TextBlock Text="Side bar" HorizontalAlignment="Center"/>
-            <Button Content="Clients"/>
-            <Button Content="Clients"/>
+        <StackPanel Grid.Column="0"  Grid.RowSpan="11"
+                    Orientation="Vertical"
+                    Width="200" 
+                    Background="#363740">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <Ellipse Margin="5,10,5,15"
+                     Width="90" Height="65" 
+                     Fill="#C4C4C4"/>
+
+            <StackPanel Orientation="Horizontal" x:Name="firstStack"
+                        Margin="5,0,0,10"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Visible"/>
+                <Button x:Name="suppliersButton"
+                        Width="150" BorderThickness="0"
+                        Content="Поставщики"
+                        FontSize="18" Foreground="White"
+                        Background="#363740"/>
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\supplier-icon.png"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="5,0,0,10"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Hidden"/>
+                <Button x:Name="clientsButton"
+                        Width="150" BorderThickness="0"
+                        Content="Клиенты"
+                        FontSize="18" Foreground="White"
+                        Background="#363740" />
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\clients-icon.png"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="5,0,0,10"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Hidden"/>
+                <Button x:Name="storeButton"
+                        Width="150" BorderThickness="0"
+                        Content="Склад"
+                        FontSize="18" Foreground="White"
+                        Background="#363740" />
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\warehouse-icon.png"/>
+            </StackPanel>
+            <Separator Height="2" Width="160"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                       Background="White"/>
+
+            <StackPanel Orientation="Horizontal" 
+                        Margin="5,0,0,10"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Hidden"/>
+                <Button x:Name="incomeButton"
+                        Width="150" BorderThickness="0"
+                        Content="Приход"
+                        FontSize="18" Foreground="White"
+                        Background="#363740"/>
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="5,0,0,10"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Hidden"/>
+                <Button x:Name="salesButton"
+                        Width="150" BorderThickness="0"
+                        Content="Продажа"
+                        FontSize="18" Foreground="White"
+                        Background="#363740"/>
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="5,0,0,10"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Hidden"/>
+                <Button x:Name="debtsButton"
+                        Width="150" BorderThickness="0"
+                        Content="Долги"
+                        FontSize="18" Foreground="White"
+                        Background="#363740"/>
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\debt-icon.png"/>
+            </StackPanel>
+            <Separator Height="2" Width="160"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                       Background="White"/>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="5,0,0,10"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Hidden"/>
+                <Button x:Name="reportsButton"
+                        Width="150" BorderThickness="0"
+                        Content="Отчёты"
+                        FontSize="18" Foreground="White"
+                        Background="#363740"/>
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\reports-icon.png"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                        Margin="5,0,0,10"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Hidden"/>
+                <Button x:Name="analyticsButton"
+                        Width="150" BorderThickness="0"
+                        Content="Аналитика"
+                        FontSize="18" Foreground="White"
+                        Background="#363740"/>
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\analytics.png"/>
+            </StackPanel>
+            <Separator Height="2" Width="160"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                       Background="White"/>
+
+            <StackPanel Orientation="Horizontal" 
+                        Margin="5,0,0,0"
+                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+                <Rectangle Fill="Red"
+                           VerticalAlignment="Stretch" 
+                           Width="4" 
+                           Visibility="Hidden"/>
+                <Button x:Name="settingsButton"
+                        Width="150" BorderThickness="0"
+                        Content="Настройки"
+                        FontSize="18" Foreground="White"
+                        Background="#363740"/>
+                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\settings-icon.png" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>
