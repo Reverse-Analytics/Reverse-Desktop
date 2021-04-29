@@ -11,7 +11,7 @@
             <Setter Property="Margin" Value="0"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="{x:Type Button}">
                         <Border Name="border" 
                             BorderThickness="0"
                             Padding="4,2"
@@ -30,7 +30,9 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
     </UserControl.Resources>
+    
     <Grid>
         <StackPanel Grid.Column="0"  Grid.RowSpan="11"
                     Orientation="Vertical"
@@ -54,11 +56,14 @@
                            Width="4" 
                            Visibility="Visible"/>
                 <Button x:Name="suppliersButton"
-                        Width="150" BorderThickness="0"
-                        Content="Поставщики"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"/>
-                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\supplier-icon.png"/>
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Поставщики" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\supplier-icon.png"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
                         Margin="5,0,0,10"
@@ -68,11 +73,14 @@
                            Width="4" 
                            Visibility="Hidden"/>
                 <Button x:Name="clientsButton"
-                        Width="150" BorderThickness="0"
-                        Content="Клиенты"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740" />
-                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\clients-icon.png"/>
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Клиенты" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\clients-icon.png"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
                         Margin="5,0,0,10"
@@ -82,12 +90,16 @@
                            Width="4" 
                            Visibility="Hidden"/>
                 <Button x:Name="storeButton"
-                        Width="150" BorderThickness="0"
-                        Content="Склад"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740" />
-                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\warehouse-icon.png"/>
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Склад" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\warehouse-icon.png"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
+            
             <Separator Height="2" Width="160"
                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                        Background="White"/>
@@ -100,10 +112,14 @@
                            Width="4" 
                            Visibility="Hidden"/>
                 <Button x:Name="incomeButton"
-                        Width="150" BorderThickness="0"
-                        Content="Приход"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"/>
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Приход" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png"/>
+                    </StackPanel>
+                </Button>
                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
@@ -114,10 +130,14 @@
                            Width="4" 
                            Visibility="Hidden"/>
                 <Button x:Name="salesButton"
-                        Width="150" BorderThickness="0"
-                        Content="Продажа"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"/>
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Продажи" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png"/>
+                    </StackPanel>
+                </Button>
                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
@@ -128,11 +148,14 @@
                            Width="4" 
                            Visibility="Hidden"/>
                 <Button x:Name="debtsButton"
-                        Width="150" BorderThickness="0"
-                        Content="Долги"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"/>
-                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\debt-icon.png"/>
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Долги" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\debt-icon.png"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
             <Separator Height="2" Width="160"
                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
@@ -145,11 +168,14 @@
                            Width="4" 
                            Visibility="Hidden"/>
                 <Button x:Name="reportsButton"
-                        Width="150" BorderThickness="0"
-                        Content="Отчёты"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"/>
-                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\reports-icon.png"/>
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Отчёты" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\reports-icon.png"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
                         Margin="5,0,0,10"
@@ -159,12 +185,16 @@
                            Width="4" 
                            Visibility="Hidden"/>
                 <Button x:Name="analyticsButton"
-                        Width="150" BorderThickness="0"
-                        Content="Аналитика"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"/>
-                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\analytics.png"/>
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Аналитика" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\analytics.png"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
+            
             <Separator Height="2" Width="160"
                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                        Background="White"/>
@@ -177,11 +207,14 @@
                            Width="4" 
                            Visibility="Hidden"/>
                 <Button x:Name="settingsButton"
-                        Width="150" BorderThickness="0"
-                        Content="Настройки"
+                        Width="190" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"/>
-                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\settings-icon.png" />
+                        Background="#363740">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Настройки" Width="130" TextAlignment="Center"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\settings-icon.png"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>
