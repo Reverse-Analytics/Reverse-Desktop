@@ -64,7 +64,11 @@
                     FontSize="18"
                     Background="#5CB85C" Foreground="White"/>
 
-            <TextBox Style="{StaticResource MyWaterMarkStyle}" Height="25" Width="250" Tag="Поиск килента" HorizontalAlignment="Left" Margin="25,25,5,5" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Height="30" Width="300" 
+                     Margin="25,25,5,5" FontSize="16"
+                     Style="{StaticResource MyWaterMarkStyle}" Tag="Поиск клиента" 
+                     HorizontalAlignment="Left" 
+                     Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
 
             <DataGrid Margin="25,25,5,5"
                       HorizontalAlignment="Left"

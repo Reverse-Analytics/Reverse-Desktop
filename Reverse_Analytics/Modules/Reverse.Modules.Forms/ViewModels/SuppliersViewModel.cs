@@ -3,18 +3,48 @@ using Prism.Regions;
 using Reverse_Analytics.Core.MVVM;
 using System;
 using System.Collections.Generic;
+using Prism.Commands;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace Reverse.Modules.Forms.ViewModels
 {
     public class SuppliersViewModel : RegionViewModelBase
     {
         IRegionNavigationJournal _journal;
-        private readonly List<Supplier> _suppliers;
-        public List<Supplier> Suppliers { get => _suppliers; }
+
+        public DelegateCommand<string> SetSearchTextCommand { get; set; }
+
+        private string _searchText;
+        private ObservableCollection<Supplier> _suppliers;
+        private List<Supplier> _suppliersData;
+
+        public ObservableCollection<Supplier> Suppliers
+        {
+            get => _suppliers;
+            set => SetProperty(ref _suppliers, value);
+        }
+
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    Suppliers = new ObservableCollection<Supplier>(_suppliersData.Where(s => s.FullName.StartsWith(value)).ToList());
+                }
+                else
+                {
+                    Suppliers = new ObservableCollection<Supplier>(_suppliersData);
+                }
+                SetProperty(ref _searchText, value);
+            }
+        }
 
         public SuppliersViewModel(IRegionManager regionManager) : base(regionManager)
         {
-            _suppliers = new List<Supplier>
+            _suppliersData = new List<Supplier>
             {
                 new Supplier("Вазира", "+998(91) 773 21 02"),
                 new Supplier("Володя", "+998(81) 922 95 13"),
@@ -35,6 +65,8 @@ namespace Reverse.Modules.Forms.ViewModels
                 new Supplier("Виктор", "+998(90) 253 42 65"),
                 new Supplier("Геннадий", "+998(94) 223 12 52")
             };
+
+            _suppliers = new ObservableCollection<Supplier>(_suppliersData);
         }
 
         private bool CanExecute()
