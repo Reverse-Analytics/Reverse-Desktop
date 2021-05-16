@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Modules.Forms", "Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Modules.ModuleNames", "Modules\Reverse.Modules.ModuleNames\Reverse.Modules.ModuleNames.csproj", "{FB48014F-0B03-4D3C-90D6-0D8EEC73EB34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Infrastructure.CustomControls", "Infrastructure\Reverse.Infrastructure.CustomControls\Reverse.Infrastructure.CustomControls.csproj", "{3E671555-4A3E-4214-B282-8332B1585101}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{FB48014F-0B03-4D3C-90D6-0D8EEC73EB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB48014F-0B03-4D3C-90D6-0D8EEC73EB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB48014F-0B03-4D3C-90D6-0D8EEC73EB34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E671555-4A3E-4214-B282-8332B1585101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E671555-4A3E-4214-B282-8332B1585101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E671555-4A3E-4214-B282-8332B1585101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E671555-4A3E-4214-B282-8332B1585101}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{1F48EA02-9214-45F7-A7B8-EAACB37DD430} = {72500AAF-1DE9-4FC7-9CD5-402DED3A0E49}
 		{D75ADFCC-0BE1-4407-BA13-C9F9F809FE28} = {53F10B28-0379-42D4-A147-45C9B3A3799E}
 		{FB48014F-0B03-4D3C-90D6-0D8EEC73EB34} = {53F10B28-0379-42D4-A147-45C9B3A3799E}
+		{3E671555-4A3E-4214-B282-8332B1585101} = {72500AAF-1DE9-4FC7-9CD5-402DED3A0E49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C2310C0-6CFD-4AA6-B571-74ADB6595E1E}
