@@ -10,12 +10,19 @@
         MinWidth="1000"
         Closing="OnClosingAction">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
+        <ContentControl Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
+        <DockPanel Grid.Row="1" Grid.Column="1">
+            <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+        </DockPanel>
         
     </Grid>
 </Window>
