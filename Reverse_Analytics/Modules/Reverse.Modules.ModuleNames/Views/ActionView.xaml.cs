@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace Reverse.Modules.ModuleNames.Views
 {
@@ -10,6 +11,12 @@ namespace Reverse.Modules.ModuleNames.Views
         public ActionView()
         {
             InitializeComponent();
+        }
+
+        private void closeButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var myWindow = Window.GetWindow(this);
+            myWindow.Close();
         }
     }
 }

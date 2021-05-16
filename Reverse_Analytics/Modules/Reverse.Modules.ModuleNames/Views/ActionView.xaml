@@ -58,9 +58,9 @@
         </Style>
 
     </UserControl.Resources>
-    
-    <Grid>
-        <StackPanel Orientation="Horizontal" Background="#363740">
+
+    <Grid Background="#363740">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Height="25">
             <Button x:Name="rollupButton"
                         Width="50" BorderThickness="0"
                         FontSize="18" Foreground="White"
@@ -83,7 +83,7 @@
                         Width="50" BorderThickness="0"
                         FontSize="18" Foreground="White"
                         Background="#363740"
-                        Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Suppliers}"
+                        Click="closeButton_Click"
                         Style="{StaticResource closeButton}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon.png"/>
