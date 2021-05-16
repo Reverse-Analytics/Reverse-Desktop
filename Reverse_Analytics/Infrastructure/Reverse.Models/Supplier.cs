@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Reverse.Infrastructure.Models
 {
-    class Supplier
+    public class Supplier
     {
         public int IdSupplier { get; set; }
         public string FullName { get; set; }

@@ -37,18 +37,18 @@
                     Width="90" Height="25"
                     Background="#5CB85C" Foreground="White"/>
 
-            <DataGrid x:Name="clientsDataGrid"
-                      Margin="25,25,5,5"
+            <DataGrid Margin="25,25,5,5"
                       HorizontalAlignment="Left"
                       AutoGenerateColumns="False"
                       CanUserDeleteRows="False" IsReadOnly="True"
                       CanUserResizeColumns="False" CanUserResizeRows="False"
                       GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="Gray" 
-                      MaxHeight="400" Width="500">
+                      MaxHeight="450"  Width="455"
+                      ItemsSource="{Binding Clients}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Клиенты" 
+                    <DataGridTextColumn Header="Имя клиента" 
                                         Binding="{Binding FullName}"
-                                        Width="295" FontSize="15"/>
+                                        Width="245" FontSize="15"/>
                     <DataGridTextColumn Header="Телефон" 
                                         Binding="{Binding PhoneNumber}"
                                         Width="200" FontSize="15"/>

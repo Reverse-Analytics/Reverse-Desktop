@@ -9,7 +9,6 @@ namespace Reverse.Modules.Forms.Views
     /// </summary>
     public partial class Clients : UserControl
     {
-        private readonly List<Supplier> suppliers;
         public Clients()
         {
             InitializeComponent();

@@ -6,7 +6,54 @@
              xmlns:local="clr-namespace:Reverse.Modules.Forms.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#EEEFEF">
+            </Setter>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="0, 0, 3, 0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Bold"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <TextBlock Text="Suppliers" HorizontalAlignment="Center" FontSize="20"/>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Label Margin="15,5,5,5" 
+                   Content="Поставщики" 
+                   FontSize="20" Foreground="#808080"
+                   HorizontalAlignment="Center"/>
+
+            <Separator Height="2"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                       Background="Black"/>
+
+            <Button x:Name="addSupplierButton" Margin="25,15,5,5"
+                    Content="+ Поставщики" 
+                    HorizontalAlignment="Left"
+                    Width="90" Height="25"
+                    Background="#5CB85C" Foreground="White"/>
+
+            <DataGrid Margin="25,25,5,5"
+                      HorizontalAlignment="Left"
+                      AutoGenerateColumns="False"
+                      CanUserDeleteRows="False" IsReadOnly="True"
+                      CanUserResizeColumns="False" CanUserResizeRows="False"
+                      GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="Gray" 
+                      MaxHeight="450"  Width="455"
+                      ItemsSource="{Binding Suppliers}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Имя поставщика" 
+                                        Binding="{Binding FullName}"
+                                        Width="245" FontSize="15"/>
+                    <DataGridTextColumn Header="Телефон" 
+                                        Binding="{Binding PhoneNumber}"
+                                        Width="200" FontSize="15"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </UserControl>

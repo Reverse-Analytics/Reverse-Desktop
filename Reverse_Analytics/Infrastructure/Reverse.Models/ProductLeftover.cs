@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Reverse.Infrastructure.Models
 {
-    class ProductLeftover : Product
+    public class ProductLeftover : Product
     {
         public float LeftOver { get; set; }
 
