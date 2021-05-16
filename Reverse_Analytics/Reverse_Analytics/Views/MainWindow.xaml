@@ -19,8 +19,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <ContentControl Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
-        <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ActionRegion}" Background="#363740"/>
+        <ContentControl Grid.Row="1" Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
+        <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" prism:RegionManager.RegionName="{x:Static core:RegionNames.ActionRegion}"/>
         <DockPanel Grid.Row="1" Grid.Column="1">
             <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
         </DockPanel>

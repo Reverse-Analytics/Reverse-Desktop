@@ -59,12 +59,12 @@
 
     </UserControl.Resources>
 
-    <Grid Background="#363740">
+    <Grid Background="#2d2e3b">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Height="25">
             <Button x:Name="rollupButton"
                         Width="50" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"
+                        Background="#2d2e3b"
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Suppliers}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\min-screen-icon.png"/>
@@ -73,7 +73,7 @@
             <Button x:Name="fullscreenButton"
                         Width="50" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"
+                        Background="#2d2e3b"
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Suppliers}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\fullscreen-icon.png"/>
@@ -82,7 +82,7 @@
             <Button x:Name="closeButton"
                         Width="50" BorderThickness="0"
                         FontSize="18" Foreground="White"
-                        Background="#363740"
+                        Background="#2d2e3b"
                         Click="closeButton_Click"
                         Style="{StaticResource closeButton}">
                 <StackPanel Orientation="Horizontal">

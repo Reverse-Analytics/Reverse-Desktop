@@ -32,9 +32,10 @@
                        Background="Black"/>
 
             <Button x:Name="addSupplierButton" Margin="25,15,5,5"
-                    Content="+ Поставщики" 
+                    Content="+ Поставщик" 
                     HorizontalAlignment="Left"
-                    Width="90" Height="25"
+                    Width="120" Height="35"
+                    FontSize="16"
                     Background="#5CB85C" Foreground="White"/>
 
             <DataGrid Margin="25,25,5,5"
