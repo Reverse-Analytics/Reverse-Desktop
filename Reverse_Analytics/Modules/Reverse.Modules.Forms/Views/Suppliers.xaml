@@ -45,6 +45,28 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="{x:Type DataGridColumnHeader}" x:Key="imageDataGridRowHeader">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}, Path=Columns[1].Header}"/>
+                            <Image IsHitTestVisible="True" Height="20" Width="20" VerticalAlignment="Center"  Source="/PrintingApplication;Component/dark_windows_8-wide.jpg"  Margin="0" KeyboardNavigation.IsTabStop="False"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!--
+        <DataTemplate x:Key="MyHeaderTemplate">
+            <StackPanel Orientation="Horizontal">
+        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\sorting-icon.png" Margin="7"/>
+        <TextBlock Text="Имя поставщика" VerticalAlignment="Center"/>
+        </StackPanel>
+        </DataTemplate>
+        -->
     </UserControl.Resources>
     <Grid>
         <StackPanel Grid.Column="1" Orientation="Vertical">
@@ -79,9 +101,10 @@
                       MaxHeight="450"  Width="455"
                       ItemsSource="{Binding Suppliers}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Имя поставщика" 
+                    <DataGridTextColumn Header="Имя поставщика"
                                         Binding="{Binding FullName}"
-                                        Width="245" FontSize="15"/>
+                                        Width="245" FontSize="15">
+                    </DataGridTextColumn>
                     <DataGridTextColumn Header="Телефон" 
                                         Binding="{Binding PhoneNumber}"
                                         Width="200" FontSize="15"/>
