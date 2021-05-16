@@ -4,14 +4,14 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:core="clr-namespace:Reverse_Analytics.Core;assembly=Reverse.Core"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}"
         WindowState="Maximized"
         MinHeight="700"
         MinWidth="1000"
-        Closing="OnClosingAction">
+        Closing="OnClosingAction"
+        Title="MainWindow" Height="700" Width="950" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -20,6 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <ContentControl Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
+        <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.ActionRegion}"/>
         <DockPanel Grid.Row="1" Grid.Column="1">
             <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
         </DockPanel>
