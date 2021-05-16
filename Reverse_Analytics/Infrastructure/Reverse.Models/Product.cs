@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Reverse.Models
+namespace Reverse.Infrastructure.Models
 {
     class Product
     {

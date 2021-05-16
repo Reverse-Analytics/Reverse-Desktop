@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\Reverse.Models\Reverse.Models.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Reverse.Models\Reverse.Infrastructure.Models.csproj" />
     <ProjectReference Include="..\..\Reverse_Analytics.Core\Reverse.Core.csproj" />
     <ProjectReference Include="..\..\Services\Reverse.Services.Interfaces\Reverse.Services.Interfaces.csproj" />
     <ProjectReference Include="..\..\Services\Reverse.Services\Reverse.Services.csproj" />

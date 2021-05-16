@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\Reverse.Entities\Reverse.Entities.csproj" />
-    <ProjectReference Include="..\Infrastructure\Reverse.Models\Reverse.Models.csproj" />
+    <ProjectReference Include="..\Infrastructure\Reverse.Entities\Reverse.Infrastructure.Entities.csproj" />
+    <ProjectReference Include="..\Infrastructure\Reverse.Models\Reverse.Infrastructure.Models.csproj" />
     <ProjectReference Include="..\Modules\Reverse.Modules.Forms\Reverse.Modules.Forms.csproj" />
     <ProjectReference Include="..\Modules\Reverse.Modules.ModuleNames\Reverse.Modules.ModuleNames.csproj" />
     <ProjectReference Include="..\Reverse_Analytics.Core\Reverse.Core.csproj" />

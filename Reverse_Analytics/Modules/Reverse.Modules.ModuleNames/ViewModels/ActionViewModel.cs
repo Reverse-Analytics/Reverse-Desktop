@@ -1,11 +1,11 @@
 ﻿using Prism.Commands;
 using Prism.Regions;
-using Reverse.Models.Enums;
+using Reverse.Infrastructure.Models.Enums;
 using Reverse_Analytics.Core;
 using Reverse_Analytics.Core.MVVM;
 using System;
 
-namespace Reverse.Modules.ModuleNames.ViewModels
+namespace Reverse.Modules.ModuleName.ViewModels
 {
     public class ActionViewModel : RegionViewModelBase
     {

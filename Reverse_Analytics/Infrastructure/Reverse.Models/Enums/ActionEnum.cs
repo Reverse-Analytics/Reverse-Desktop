@@ -1,4 +1,4 @@
-﻿namespace Reverse.Models.Enums
+﻿namespace Reverse.Infrastructure.Models.Enums
 {
     public enum ActionEnum
     {

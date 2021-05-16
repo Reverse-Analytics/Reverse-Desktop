@@ -11,19 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{53F1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{BBF262A1-B7DF-4814-8582-22ACD7796BD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Services", "Services\Reverse.Services\Reverse.Services.csproj", "{C15BEABB-DE16-45B7-983C-3E1C69179600}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Services", "Services\Reverse.Services\Reverse.Services.csproj", "{C15BEABB-DE16-45B7-983C-3E1C69179600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Services.Interfaces", "Services\Reverse.Services.Interfaces\Reverse.Services.Interfaces.csproj", "{4E853FDA-5C50-41E8-8C6C-9874181376B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Services.Interfaces", "Services\Reverse.Services.Interfaces\Reverse.Services.Interfaces.csproj", "{4E853FDA-5C50-41E8-8C6C-9874181376B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{72500AAF-1DE9-4FC7-9CD5-402DED3A0E49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Entities", "Infrastructure\Reverse.Entities\Reverse.Entities.csproj", "{43741BFB-A5E9-4D0B-8C83-D96EF39B3D36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Infrastructure.Entities", "Infrastructure\Reverse.Entities\Reverse.Infrastructure.Entities.csproj", "{43741BFB-A5E9-4D0B-8C83-D96EF39B3D36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Models", "Infrastructure\Reverse.Models\Reverse.Models.csproj", "{1F48EA02-9214-45F7-A7B8-EAACB37DD430}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Infrastructure.Models", "Infrastructure\Reverse.Models\Reverse.Infrastructure.Models.csproj", "{1F48EA02-9214-45F7-A7B8-EAACB37DD430}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Modules.Forms", "Modules\Reverse.Modules.Forms\Reverse.Modules.Forms.csproj", "{D75ADFCC-0BE1-4407-BA13-C9F9F809FE28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Modules.Forms", "Modules\Reverse.Modules.Forms\Reverse.Modules.Forms.csproj", "{D75ADFCC-0BE1-4407-BA13-C9F9F809FE28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Modules.ModuleNames", "Modules\Reverse.Modules.ModuleNames\Reverse.Modules.ModuleNames.csproj", "{FB48014F-0B03-4D3C-90D6-0D8EEC73EB34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Modules.ModuleNames", "Modules\Reverse.Modules.ModuleNames\Reverse.Modules.ModuleNames.csproj", "{FB48014F-0B03-4D3C-90D6-0D8EEC73EB34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

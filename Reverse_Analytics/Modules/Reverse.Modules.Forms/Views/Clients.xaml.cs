@@ -14,5 +14,10 @@ namespace Reverse.Modules.Forms.Views
         {
             InitializeComponent();
         }
+
+        private void addClientsButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }
