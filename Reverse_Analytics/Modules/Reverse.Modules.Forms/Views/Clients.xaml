@@ -77,7 +77,8 @@
                       CanUserResizeColumns="False" CanUserResizeRows="False"
                       GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="Gray" 
                       MaxHeight="450"  Width="455"
-                      ItemsSource="{Binding Clients}">
+                      ItemsSource="{Binding Clients}"
+                      MouseDoubleClick="DataGrid_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Имя клиента" 
                                         Binding="{Binding FullName}"

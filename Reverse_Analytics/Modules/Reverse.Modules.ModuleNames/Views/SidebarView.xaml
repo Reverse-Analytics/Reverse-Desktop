@@ -2,9 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:enum="clr-namespace:Reverse.Infrastructure.Models.Enums;assembly=Reverse.Infrastructure.Models"
+             xmlns:clock="clr-namespace:Reverse.Infrastructure.CustomControls.Common;assembly=Reverse.Infrastructure.CustomControls"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <UserControl.Resources>
+        <clock:Clock x:Key="clock" />
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
         <Style TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
@@ -32,12 +34,11 @@
         </Style>
 
     </UserControl.Resources>
-    
+
     <Grid>
-        <StackPanel Grid.Column="0"  Grid.RowSpan="11"
-                    Orientation="Vertical"
-                    Width="200" 
-                    Background="#363740">
+        <StackPanel Width="200" 
+                    Background="#363740"
+                    Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Center">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Label}">
                     <Setter Property="Margin" Value="0,10,0,0"/>
@@ -101,7 +102,7 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            
+
             <Separator Height="2" Width="160"
                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                        Background="White"/>
@@ -196,7 +197,7 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            
+
             <Separator Height="2" Width="160"
                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
                        Background="White"/>
@@ -218,6 +219,15 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
+        </StackPanel>
+
+        <StackPanel Width="200" 
+                    Background="#363740"
+                    Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding DateTime, StringFormat=\{0:dd/MM/yyyy HH:mm:ss\}, Source={StaticResource clock}}" 
+                       Foreground="White" Margin="0,15,0,0"
+                       FontSize="18" FontWeight="Bold"
+                       HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -21,5 +21,10 @@ namespace Reverse.Modules.Forms.Views
         {
 
         }
+
+        private void DataGrid_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
