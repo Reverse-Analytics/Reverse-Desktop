@@ -7,5 +7,6 @@
         public const string NavigationRegion = "NavigationRegion";
         public const string ActionRegion = "ActionRegion";
         public const string WindowRegion = "WindowRegion";
+        public const string DetailsRegion = "DetailsRegion";
     }
 }

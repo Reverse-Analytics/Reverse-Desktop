@@ -17,13 +17,16 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="450"/>
         </Grid.ColumnDefinitions>
 
         <ContentControl Grid.Row="1" Grid.Column="0" prism:RegionManager.RegionName="{x:Static core:RegionNames.SideBarRegion}"/>
-        <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" prism:RegionManager.RegionName="{x:Static core:RegionNames.ActionRegion}"/>
-        <DockPanel Grid.Row="1" Grid.Column="1">
+        <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" prism:RegionManager.RegionName="{x:Static core:RegionNames.ActionRegion}"/>
+        <DockPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
             <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
         </DockPanel>
-        
+        <DockPanel Grid.Row="1" Grid.Column="2">
+            <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.DetailsRegion}" />
+        </DockPanel>
     </Grid>
 </Window>

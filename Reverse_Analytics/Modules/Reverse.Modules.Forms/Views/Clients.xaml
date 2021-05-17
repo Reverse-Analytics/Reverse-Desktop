@@ -78,7 +78,12 @@
                       GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="Gray" 
                       MaxHeight="450"  Width="455"
                       ItemsSource="{Binding Clients}"
-                      MouseDoubleClick="DataGrid_MouseDoubleClick">
+                      IsSynchronizedWithCurrentItem="True">
+                <DataGrid SelectedItem="{Binding SelectedItem}">
+                    <DataGrid.InputBindings>
+                        <MouseBinding Gesture="LeftDoubleClick" Command="{Binding NavigateToDetailsCommand}"/>
+                    </DataGrid.InputBindings>
+                </DataGrid>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Имя клиента" 
                                         Binding="{Binding FullName}"

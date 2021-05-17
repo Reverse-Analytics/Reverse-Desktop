@@ -17,6 +17,7 @@ namespace Reverse.Modules.Forms.ViewModels
         public static Effect ControlEffect { get; set; }*/
 
         public DelegateCommand<string> SetSearchTextCommand { get; set; }
+        public DelegateCommand<Client> NavigateToDetailsCommand { get; set; }
 
         private string _searchText;
         private List<Client> _clientsData;
@@ -48,6 +49,7 @@ namespace Reverse.Modules.Forms.ViewModels
         public ClientsViewModel(IRegionManager regionManager) : base(regionManager)
         {
             SetSearchTextCommand = new DelegateCommand<string>(SetSearchText);
+            NavigateToDetailsCommand = new DelegateCommand<Client>(FastAction);
 
             _clientsData = new List<Client>
             {
@@ -71,6 +73,11 @@ namespace Reverse.Modules.Forms.ViewModels
                 new Client("Геннадий", "+998(94) 223 12 52")
             };
             _clients = new ObservableCollection<Client>(_clientsData);
+        }
+
+        private void FastAction(Client client)
+        {
+            int g = 0;
         }
 
         private bool CanExecute()
