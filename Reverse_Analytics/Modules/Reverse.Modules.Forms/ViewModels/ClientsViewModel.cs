@@ -13,8 +13,8 @@ namespace Reverse.Modules.Forms.ViewModels
     class ClientsViewModel : RegionViewModelBase
     {
         private IRegionNavigationJournal _journal;
-        public static double ControlOpacity { get; set; } = 0.5;
-        public static Effect ControlEffect { get; set; }
+        /*public static double ControlOpacity { get; set; }
+        public static Effect ControlEffect { get; set; }*/
 
         public DelegateCommand<string> SetSearchTextCommand { get; set; }
 

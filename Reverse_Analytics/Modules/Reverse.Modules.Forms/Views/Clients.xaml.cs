@@ -23,15 +23,28 @@ namespace Reverse.Modules.Forms.Views
 
         private void addClientsButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            
+            this.Opacity = 0.5;
+            this.Effect = new BlurEffect();
+
+            // Set the options for the settings (child) window
+            NewClientDialog wdwSettings = new NewClientDialog()
+            {
+                ShowInTaskbar = false,
+                Topmost = true
+            };
+
+            // Open the child window
+            wdwSettings.ShowDialog();
+
+            //restore Opacity and remove blur after closing the child window
+            this.Opacity = 1;
+            this.Effect = null;
         }
 
         private void DataGrid_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            SidebarViewModel.ControlOpacity = 0.5;
-            SidebarViewModel.ControlEffect = new BlurEffect();
-            ClientsViewModel.ControlOpacity = 0.5;
-            ClientsViewModel.ControlEffect = new BlurEffect();
+            this.Opacity = 0.5;
+            this.Effect = new BlurEffect();
 
             // Set the options for the settings (child) window
             ClientDetails wdwSettings = new ClientDetails()
@@ -44,10 +57,8 @@ namespace Reverse.Modules.Forms.Views
             wdwSettings.ShowDialog();
 
             //restore Opacity and remove blur after closing the child window
-            SidebarViewModel.ControlOpacity = 1;
-            SidebarViewModel.ControlEffect = null;
-            ClientsViewModel.ControlOpacity = 1;
-            ClientsViewModel.ControlEffect = null;
+            this.Opacity = 1;
+            this.Effect = null;
         }
     }
 }

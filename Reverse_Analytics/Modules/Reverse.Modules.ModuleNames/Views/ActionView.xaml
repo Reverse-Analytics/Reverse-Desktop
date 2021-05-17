@@ -75,7 +75,7 @@
                         Background="#2d2e3b"
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Suppliers}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\min-screen-icon.png" Margin="5"/>
+                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\min-screen-icon.png" Margin="10"/>
                 </StackPanel>
             </Button>
             <Button x:Name="fullscreenButton"
@@ -85,7 +85,7 @@
                         Background="#2d2e3b"
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Suppliers}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\square-icon.png" Margin="5"/>
+                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\square-icon.png" Margin="10"/>
                 </StackPanel>
             </Button>
             <Button x:Name="closeButton"
@@ -96,7 +96,7 @@
                         Click="closeButton_Click"
                         Style="{StaticResource closeButton}">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon.png" Margin="5"/>
+                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon.png" Margin="10"/>
                 </StackPanel>
             </Button>
         </StackPanel>
