@@ -6,12 +6,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections.ObjectModel;
 using Prism.Commands;
+using System.Windows.Media.Effects;
 
 namespace Reverse.Modules.Forms.ViewModels
 {
     class ClientsViewModel : RegionViewModelBase
     {
         private IRegionNavigationJournal _journal;
+        public static double ControlOpacity { get; set; } = 0.5;
+        public static Effect ControlEffect { get; set; }
 
         public DelegateCommand<string> SetSearchTextCommand { get; set; }
 

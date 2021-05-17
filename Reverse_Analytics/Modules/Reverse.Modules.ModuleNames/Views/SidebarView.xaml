@@ -4,7 +4,8 @@
              xmlns:enum="clr-namespace:Reverse.Infrastructure.Models.Enums;assembly=Reverse.Infrastructure.Models"
              xmlns:clock="clr-namespace:Reverse.Infrastructure.CustomControls.Common;assembly=Reverse.Infrastructure.CustomControls"
              xmlns:prism="http://prismlibrary.com/"
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Opacity="{Binding ControlOpacity}" Effect="{Binding ControlEffect}">
     <UserControl.Resources>
         <clock:Clock x:Key="clock" />
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->

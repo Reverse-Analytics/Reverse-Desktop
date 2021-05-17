@@ -4,11 +4,14 @@ using Reverse.Infrastructure.Models.Enums;
 using Reverse_Analytics.Core;
 using Reverse_Analytics.Core.MVVM;
 using System;
+using System.Windows.Media.Effects;
 
 namespace Reverse.Modules.ModuleNames.ViewModels
 {
     public class SidebarViewModel : RegionViewModelBase
     {
+        public static double ControlOpacity { get; set; } = 1;
+        public static Effect ControlEffect { get; set; }
         #region Commands
 
         public DelegateCommand<ActionEnum?> FastActionCommand { get; set; }
