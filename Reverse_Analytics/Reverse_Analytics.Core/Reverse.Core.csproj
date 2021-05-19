@@ -10,6 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Colors.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Colors.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\FilePath.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -23,6 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Colors.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Colors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\FilePath.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FilePath.Designer.cs</LastGenOutput>

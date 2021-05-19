@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Reverse.Modules.Forms.Views"
+             xmlns:buttons="clr-namespace:Reverse.Infrastructure.CustomControls.Buttons;assembly=Reverse.Infrastructure.CustomControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -59,14 +59,6 @@
             </Setter>
         </Style>
         
-        <!--
-        <DataTemplate x:Key="MyHeaderTemplate">
-            <StackPanel Orientation="Horizontal">
-        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\sorting-icon.png" Margin="7"/>
-        <TextBlock Text="Имя поставщика" VerticalAlignment="Center"/>
-        </StackPanel>
-        </DataTemplate>
-        -->
     </UserControl.Resources>
     <Grid>
         <StackPanel Grid.Column="1" Orientation="Vertical">
@@ -79,12 +71,7 @@
                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                        Background="Black"/>
 
-            <Button x:Name="addSupplierButton" Margin="25,15,5,5"
-                    Content="+ Поставщик" 
-                    HorizontalAlignment="Left"
-                    Width="120" Height="35"
-                    FontSize="16"
-                    Background="#5CB85C" Foreground="White"/>
+            <buttons:AddButton Content="+ Поставщики"/>
 
             <TextBox Height="30" Width="300" 
                      Margin="25,25,5,5" FontSize="16"
