@@ -4,17 +4,18 @@
              xmlns:enum="clr-namespace:Reverse.Infrastructure.Models.Enums;assembly=Reverse.Infrastructure.Models"
              xmlns:clock="clr-namespace:Reverse.Infrastructure.CustomControls.Common;assembly=Reverse.Infrastructure.CustomControls"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:buttons="clr-namespace:Reverse.Infrastructure.CustomControls.Buttons;assembly=Reverse.Infrastructure.CustomControls"
              prism:ViewModelLocator.AutoWireViewModel="True"
              Opacity="{Binding ControlOpacity}" Effect="{Binding ControlEffect}">
     <UserControl.Resources>
         <clock:Clock x:Key="clock" />
         <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
-        <Style TargetType="Button">
+        <Style TargetType="buttons:NavigationButton">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="Margin" Value="0"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate TargetType="{x:Type buttons:NavigationButton}">
                         <Border Name="border" 
                             BorderThickness="0"
                             Padding="4,2"
@@ -57,16 +58,13 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Visible"/>
-                <Button x:Name="suppliersButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740"
+                <buttons:NavigationButton
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Suppliers}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Поставщики" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\supplier-icon.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
                         Margin="5,0,0,10"
@@ -75,16 +73,13 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Hidden"/>
-                <Button x:Name="clientsButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740"
+                <buttons:NavigationButton
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Clients}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Клиенты" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\clients-icon.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
                         Margin="5,0,0,10"
@@ -93,15 +88,12 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Hidden"/>
-                <Button x:Name="storeButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740">
+                <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Склад" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\warehouse-icon.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
             </StackPanel>
 
             <Separator Height="2" Width="160"
@@ -115,15 +107,12 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Hidden"/>
-                <Button x:Name="incomeButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740">
+                <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Приход" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
@@ -133,15 +122,12 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Hidden"/>
-                <Button x:Name="salesButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740">
+                <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Продажи" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
@@ -151,15 +137,12 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Hidden"/>
-                <Button x:Name="debtsButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740">
+                <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Долги" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\debt-icon.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
             </StackPanel>
             <Separator Height="2" Width="160"
                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
@@ -171,15 +154,12 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Hidden"/>
-                <Button x:Name="reportsButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740">
+                <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Отчёты" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\reports-icon.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
             </StackPanel>
             <StackPanel Orientation="Horizontal" 
                         Margin="5,0,0,10"
@@ -188,15 +168,12 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Hidden"/>
-                <Button x:Name="analyticsButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740">
+                <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Аналитика" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\analytics.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
             </StackPanel>
 
             <Separator Height="2" Width="160"
@@ -210,15 +187,12 @@
                            VerticalAlignment="Stretch" 
                            Width="4" 
                            Visibility="Hidden"/>
-                <Button x:Name="settingsButton"
-                        Width="190" BorderThickness="0"
-                        FontSize="18" Foreground="White"
-                        Background="#363740">
+                <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Настройки" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\settings-icon.png"/>
                     </StackPanel>
-                </Button>
+                </buttons:NavigationButton>
             </StackPanel>
         </StackPanel>
 
@@ -227,7 +201,7 @@
                     Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <TextBlock Text="{Binding DateTime, StringFormat=\{0:dd/MM/yyyy HH:mm:ss\}, Source={StaticResource clock}}" 
                        Foreground="White" Margin="0,15,0,0"
-                       FontSize="18" FontWeight="Bold"
+                       FontSize="16" FontWeight="Bold"
                        HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
