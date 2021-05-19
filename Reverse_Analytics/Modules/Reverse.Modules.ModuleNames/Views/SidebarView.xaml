@@ -5,6 +5,7 @@
              xmlns:clock="clr-namespace:Reverse.Infrastructure.CustomControls.Common;assembly=Reverse.Infrastructure.CustomControls"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:buttons="clr-namespace:Reverse.Infrastructure.CustomControls.Buttons;assembly=Reverse.Infrastructure.CustomControls"
+             xmlns:common="clr-namespace:Reverse.Infrastructure.CustomControls.Common;assembly=Reverse.Infrastructure.CustomControls"
              prism:ViewModelLocator.AutoWireViewModel="True"
              Opacity="{Binding ControlOpacity}" Effect="{Binding ControlEffect}">
     <UserControl.Resources>
@@ -41,19 +42,12 @@
         <StackPanel Width="200" 
                     Background="#363740"
                     Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Center">
-            <StackPanel.Resources>
-                <Style TargetType="{x:Type Label}">
-                    <Setter Property="Margin" Value="0,10,0,0"/>
-                </Style>
-            </StackPanel.Resources>
 
             <Ellipse Margin="5,10,5,15"
                      Width="90" Height="74" 
                      Fill="#C4C4C4"/>
 
-            <StackPanel Orientation="Horizontal" x:Name="firstStack"
-                        Margin="5,50,0,10"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            <common:NavigationStackPanel x:Name="firstStack" GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -65,10 +59,8 @@
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\supplier-icon.png"/>
                     </StackPanel>
                 </buttons:NavigationButton>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" 
-                        Margin="5,0,0,10"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            </common:NavigationStackPanel>
+            <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -80,10 +72,8 @@
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\clients-icon.png"/>
                     </StackPanel>
                 </buttons:NavigationButton>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" 
-                        Margin="5,0,0,10"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            </common:NavigationStackPanel>
+            <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -94,15 +84,11 @@
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\warehouse-icon.png"/>
                     </StackPanel>
                 </buttons:NavigationButton>
-            </StackPanel>
+            </common:NavigationStackPanel>
 
-            <Separator Height="2" Width="160"
-                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-                       Background="White"/>
+            <common:NavbarSeparator />
 
-            <StackPanel Orientation="Horizontal" 
-                        Margin="5,0,0,10"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -114,10 +100,8 @@
                     </StackPanel>
                 </buttons:NavigationButton>
                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" 
-                        Margin="5,0,0,10"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            </common:NavigationStackPanel>
+            <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -129,10 +113,8 @@
                     </StackPanel>
                 </buttons:NavigationButton>
                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" 
-                        Margin="5,0,0,10"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            </common:NavigationStackPanel>
+            <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -143,13 +125,11 @@
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\debt-icon.png"/>
                     </StackPanel>
                 </buttons:NavigationButton>
-            </StackPanel>
-            <Separator Height="2" Width="160"
-                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-                       Background="White"/>
-            <StackPanel Orientation="Horizontal" 
-                        Margin="5,0,0,10"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            </common:NavigationStackPanel>
+
+            <common:NavbarSeparator />
+
+            <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -160,10 +140,8 @@
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\reports-icon.png"/>
                     </StackPanel>
                 </buttons:NavigationButton>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" 
-                        Margin="5,0,0,10"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            </common:NavigationStackPanel>
+            <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -174,15 +152,11 @@
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\analytics.png"/>
                     </StackPanel>
                 </buttons:NavigationButton>
-            </StackPanel>
+            </common:NavigationStackPanel>
 
-            <Separator Height="2" Width="160"
-                       HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
-                       Background="White"/>
+            <common:NavbarSeparator />
 
-            <StackPanel Orientation="Horizontal" 
-                        Margin="5,0,0,0"
-                        GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
+            <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
@@ -193,7 +167,7 @@
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\settings-icon.png"/>
                     </StackPanel>
                 </buttons:NavigationButton>
-            </StackPanel>
+            </common:NavigationStackPanel>
         </StackPanel>
 
         <StackPanel Width="200" 
