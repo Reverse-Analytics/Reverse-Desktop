@@ -3,7 +3,6 @@ using Prism.Modularity;
 using Prism.Regions;
 using Reverse.Modules.ModuleNames.Views;
 using Reverse_Analytics.Core;
-using Reverse_Analytics.Views;
 
 namespace Reverse.Modules.ModuleNames
 {

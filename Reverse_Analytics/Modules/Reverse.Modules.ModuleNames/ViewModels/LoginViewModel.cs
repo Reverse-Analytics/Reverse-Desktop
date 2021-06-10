@@ -88,5 +88,7 @@ namespace Reverse.Modules.ModuleNames.ViewModels
             RegionManager.RequestNavigate(RegionNames.SideBarRegion, ViewNames.SidebarView);
             RegionManager.RequestNavigate(RegionNames.ActionRegion, ViewNames.ActionView);
         }
+
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Reverse.Modules.ModuleNames.Views;
+using System.ComponentModel;
 using System.Windows;
 
 namespace Reverse_Analytics
@@ -10,7 +11,19 @@ namespace Reverse_Analytics
     {
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
+            Loaded += ShowLoginDialog;
+        }
+
+        private void ShowLoginDialog(object sender, RoutedEventArgs e)
+        {
+            var window = new LoginView()
+            {
+                Owner = Application.Current.MainWindow
+            };
+
+            window.ShowDialog();
         }
 
         private void OnClosingAction(object sender, CancelEventArgs e)
