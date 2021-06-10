@@ -4,6 +4,7 @@ using Reverse.Services.Interfaces;
 using Reverse_Analytics.Core;
 using Reverse_Analytics.Core.MVVM;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Reverse.Modules.ModuleNames.ViewModels
 {

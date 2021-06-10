@@ -31,14 +31,34 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="closeButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="border" 
+                            BorderThickness="0"
+                            Padding="4,2"
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="Red"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Grid>
-        <Border>
-            <Border.Effect>
-                <BlurEffect Radius="500"/>
-            </Border.Effect>
-        </Border>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -53,6 +73,20 @@
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
+
+            <Button x:Name="closeButton"
+                        Width="40"
+                        Height="40"
+                        BorderThickness="0"
+                        FontSize="18" 
+                        Foreground="White"
+                        HorizontalAlignment="Right" VerticalAlignment="Top"
+                        Click="CloseButton_Click"
+                        Style="{StaticResource closeButton}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon.png" Margin="10"/>
+                </StackPanel>
+            </Button>
 
             <StackPanel VerticalAlignment="Center">
                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\login_logo.png" Width="80"/>

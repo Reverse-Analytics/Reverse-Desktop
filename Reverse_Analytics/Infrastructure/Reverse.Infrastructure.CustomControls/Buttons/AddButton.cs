@@ -8,9 +8,9 @@ namespace Reverse.Infrastructure.CustomControls.Buttons
         {
             Margin = new System.Windows.Thickness(25, 15, 5, 5);
             HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
-            Width = 120;
+            Width = 110;
             Height = 35;
-            FontSize = 18;
+            FontSize = 14;
             Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#5CB85C"));
             Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
         }
