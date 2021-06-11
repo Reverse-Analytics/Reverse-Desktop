@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Reverse.Modules.Forms.Views"
              xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views"
              mc:Ignorable="d"
-             Width="450" Height="600">
+             Width="450" Height="400">
     <Grid>
         
         <Grid.RowDefinitions>

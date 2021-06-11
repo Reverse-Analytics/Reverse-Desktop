@@ -47,14 +47,7 @@ namespace Reverse.Modules.Forms.Views
             this.Effect = new BlurEffect();
 
             // Set the options for the settings (child) window
-            ClientDetails wdwSettings = new ClientDetails()
-            {
-                ShowInTaskbar = false,
-                Topmost = true
-            };
-
-            // Open the child window
-            wdwSettings.ShowDialog();
+            personDetails.Visibility = System.Windows.Visibility.Visible;
 
             //restore Opacity and remove blur after closing the child window
             this.Opacity = 1;

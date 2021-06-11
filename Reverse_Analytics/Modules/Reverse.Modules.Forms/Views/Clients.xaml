@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:buttons="clr-namespace:Reverse.Infrastructure.CustomControls.Buttons;assembly=Reverse.Infrastructure.CustomControls"
+             xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Opacity="{Binding ControlOpacity}" Effect="{Binding ControlEffect}">
     <UserControl.Resources>
@@ -48,7 +49,11 @@
     </UserControl.Resources>
     
     <Grid>
-        <StackPanel Grid.Column="1" Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Orientation="Vertical">
             <Label Margin="15,5,5,5" 
                    Content="Клиенты" 
                    FontSize="20" Foreground="#808080"
@@ -84,6 +89,13 @@
                                         Width="200" FontSize="15"/>
                 </DataGrid.Columns>
             </DataGrid>
+        </StackPanel>
+
+        <StackPanel x:Name="personDetails" 
+                    HorizontalAlignment="Right" 
+                    Grid.Row="1"
+                    Visibility="Hidden">
+            <controls:PersonDetails DockPanel.Dock="Right" Width="400"/>
         </StackPanel>
     </Grid>
 </UserControl>
