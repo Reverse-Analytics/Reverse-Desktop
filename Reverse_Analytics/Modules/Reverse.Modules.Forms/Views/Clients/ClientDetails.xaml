@@ -6,6 +6,58 @@
              xmlns:local="clr-namespace:Reverse.Modules.Forms.Views.Clients"
              xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views.Clients"
              mc:Ignorable="d" >
+
+    <UserControl.Resources>
+        <Style x:Key="closeButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="border" 
+                            BorderThickness="0"
+                            Padding="4,2"
+                            BorderBrush="DarkGray" 
+                            CornerRadius="3"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="Red"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TabItemStyle" TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Border x:Name="Border" BorderThickness="1,1,1,0" CornerRadius="5,5,0,0"
+                        Padding="25,5,25,5" Margin="0,0,0,0" BorderBrush="Gainsboro">
+                            <ContentPresenter x:Name="ContentSite" ContentSource="Header" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="TextElement.Foreground" TargetName="ContentSite" Value="DarkGray"/>
+                                <Setter TargetName="Border" Property="Background" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter Property="TextElement.Foreground" TargetName="ContentSite" Value="#6AA6DA"/>
+                                <Setter TargetName="Border" Property="Background" Value="White"/>
+                                <Setter TargetName="Border" Property="BorderThickness" Value="0"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -20,14 +72,25 @@
                     HorizontalAlignment="Right"
                     Margin="2">
             <Separator BorderThickness="2" Height="35"/>
-            <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon.png"
-                   Width="25" Height="35" Margin="200,0,0,0"/>
+            <Button x:Name="closeButton"
+                        Width="50"
+                        BorderThickness="0"
+                        FontSize="18"
+                        Background="White"
+                        Style="{StaticResource closeButton}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon-gray.png"
+                           Width="20"
+                           Height="20"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Margin="5,50,0,0">
             <TabControl>
                 <TabItem Header="Общие"
-                         Width="100">
+                         Width="100"
+                         Style="{DynamicResource TabItemStyle}">
                     <StackPanel>
                         <StackPanel Margin="10">
                             <Label Content="Имя Клиента" />
@@ -70,20 +133,25 @@
                                         Background="#337AB7"
                                         Foreground="White"
                                         Width="80"
+                                        Height="25"
                                         DockPanel.Dock="Left"/>
                                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\delete-icon.png"
                                        HorizontalAlignment="Right"
-                                       Margin="0,0,5,0"/>
+                                       Margin="0,0,5,0"
+                                       Width="20"
+                                       Height="20"/>
                             </DockPanel>
                         </StackPanel>
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="Сводый отчёт"
-                         Width="100">
+                         Width="130"
+                         Style="{DynamicResource TabItemStyle}">
                     <controls:ClientInformation/>
                 </TabItem>
                 <TabItem Header="Статистика"
-                         Width="100">
+                         Width="130"
+                         Style="{DynamicResource TabItemStyle}">
 
                 </TabItem>
             </TabControl>
