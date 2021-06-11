@@ -58,7 +58,7 @@
                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                        Background="Black"/>
 
-            <buttons:AddButton Content="+ Клиенты"/>
+            <buttons:AddButton Content="+ Клиенты" Click="addClientsButton_Click"/>
 
             <TextBox Height="30" Width="300" 
                      Margin="25,25,5,5" FontSize="16"
@@ -74,12 +74,7 @@
                       GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="Gray" 
                       MaxHeight="450"  Width="455"
                       ItemsSource="{Binding Clients}"
-                      IsSynchronizedWithCurrentItem="True">
-                <DataGrid SelectedItem="{Binding SelectedItem}">
-                    <DataGrid.InputBindings>
-                        <MouseBinding Gesture="LeftDoubleClick" Command="{Binding NavigateToDetailsCommand}"/>
-                    </DataGrid.InputBindings>
-                </DataGrid>
+                      MouseDoubleClick="DataGrid_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Имя клиента" 
                                         Binding="{Binding FullName}"
