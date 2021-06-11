@@ -1,12 +1,13 @@
-﻿<UserControl x:Class="Reverse.Modules.Forms.Views.Clients"
+﻿<UserControl x:Class="Reverse.Modules.Forms.Views.Clients.Clients"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Reverse.Modules.Forms.Views.Clients"
+             xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views.Clients"
              xmlns:buttons="clr-namespace:Reverse.Infrastructure.CustomControls.Buttons;assembly=Reverse.Infrastructure.CustomControls"
-             xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Opacity="{Binding ControlOpacity}" Effect="{Binding ControlEffect}">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Style TargetType="{x:Type DataGridColumnHeader}">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -47,7 +48,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -94,8 +95,8 @@
         <StackPanel x:Name="personDetails" 
                     HorizontalAlignment="Right" 
                     Grid.Row="1"
-                    Visibility="Hidden">
-            <controls:PersonDetails DockPanel.Dock="Right" Width="400"/>
+                    Visibility="Visible">
+            <controls:ClientDetails DockPanel.Dock="Right" Width="400"/>
         </StackPanel>
     </Grid>
 </UserControl>

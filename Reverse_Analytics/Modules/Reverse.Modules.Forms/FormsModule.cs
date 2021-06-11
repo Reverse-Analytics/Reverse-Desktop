@@ -1,6 +1,7 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
+using Reverse.Modules.Forms.Views.Clients;
 using Reverse.Modules.Forms.Views;
 using System;
 using System.Collections.Generic;

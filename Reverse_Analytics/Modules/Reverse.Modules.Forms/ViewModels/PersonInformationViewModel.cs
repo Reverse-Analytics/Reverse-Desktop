@@ -11,7 +11,7 @@ namespace Reverse.Modules.Forms.ViewModels
 
         #region Properties
 
-        private string _title;
+        private string _title = "Somer random text";
         public string Title 
         {
             get => _title;

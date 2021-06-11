@@ -8,16 +8,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Reverse.Modules.Forms.Views
+namespace Reverse.Modules.Forms.Views.Clients
 {
     /// <summary>
-    /// Interaction logic for ClientDetails.xaml
+    /// Interaction logic for ClientInformation.xaml
     /// </summary>
-    public partial class ClientDetails : Window
+    public partial class ClientInformation : UserControl
     {
-        public ClientDetails()
+        public ClientInformation()
         {
             InitializeComponent();
         }

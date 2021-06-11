@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using Prism.Commands;
 using System.Windows.Media.Effects;
 
-namespace Reverse.Modules.Forms.ViewModels
+namespace Reverse.Modules.Forms.ViewModels.Clients
 {
     class ClientsViewModel : RegionViewModelBase
     {
@@ -16,18 +16,18 @@ namespace Reverse.Modules.Forms.ViewModels
         /*public static double ControlOpacity { get; set; }
         public static Effect ControlEffect { get; set; }*/
 
+        public string PersonName { get; set; } = "Some Name";
+
+        #region Commands
+
         public DelegateCommand<string> SetSearchTextCommand { get; set; }
         public DelegateCommand<Client> NavigateToDetailsCommand { get; set; }
 
-        private string _searchText;
-        private List<Client> _clientsData;
-        private ObservableCollection<Client> _clients;
+        #endregion
 
-        public ObservableCollection<Client> Clients
-        {
-            get => _clients;
-            set => SetProperty(ref _clients, value);
-        }
+        #region Properties
+
+        private string _searchText;
 
         public string SearchText 
         {
@@ -45,6 +45,23 @@ namespace Reverse.Modules.Forms.ViewModels
                 SetProperty(ref _searchText, value);
             }
         }
+
+        #endregion
+
+        #region Collections
+
+        private List<Client> _clientsData;
+        private ObservableCollection<Client> _clients;
+
+        public ObservableCollection<Client> Clients
+        {
+            get => _clients;
+            set => SetProperty(ref _clients, value);
+        }
+
+        #endregion
+
+        #region Constructors
 
         public ClientsViewModel(IRegionManager regionManager) : base(regionManager)
         {
@@ -75,6 +92,10 @@ namespace Reverse.Modules.Forms.ViewModels
             _clients = new ObservableCollection<Client>(_clientsData);
         }
 
+        #endregion
+
+        #region Command methods
+
         private void FastAction(Client client)
         {
             int g = 0;
@@ -95,13 +116,19 @@ namespace Reverse.Modules.Forms.ViewModels
             throw new NotImplementedException();
         }
 
-        private void SetSearchText(string text) => SearchText = text;
-
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
 
             _journal = navigationContext.NavigationService.Journal;
         }
+
+        #endregion
+
+        #region Helper methods
+
+        private void SetSearchText(string text) => SearchText = text;
+
+        #endregion
     }
 }

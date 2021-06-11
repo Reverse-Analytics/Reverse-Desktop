@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Reverse.Modules.Forms.Views
+namespace Reverse.Modules.Forms.Views.Clients
 {
     /// <summary>
-    /// Interaction logic for PersonDetails.xaml
+    /// Interaction logic for ClientReports.xaml
     /// </summary>
-    public partial class PersonDetails : UserControl
+    public partial class ClientReports : UserControl
     {
-        public PersonDetails()
+        public ClientReports()
         {
             InitializeComponent();
         }

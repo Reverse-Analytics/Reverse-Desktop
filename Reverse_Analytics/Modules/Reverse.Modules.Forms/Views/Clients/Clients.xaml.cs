@@ -1,15 +1,7 @@
-﻿using Infrastructure.Models;
-using Reverse.Modules.Forms.ViewModels;
-using Reverse.Modules.ModuleNames.ViewModels;
-using Reverse.Modules.ModuleNames.Views;
-using System;
-using System.Collections.Generic;
-using System.Windows.Controls;
-using System.Windows.Media;
+﻿using System.Windows.Controls;
 using System.Windows.Media.Effects;
-using System.Windows.Media.Imaging;
 
-namespace Reverse.Modules.Forms.Views
+namespace Reverse.Modules.Forms.Views.Clients
 {
     /// <summary>
     /// Interaction logic for Clients.xaml
