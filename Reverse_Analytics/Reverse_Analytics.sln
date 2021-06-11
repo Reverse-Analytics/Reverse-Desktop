@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Modules.Forms", "Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Modules.ModuleNames", "Modules\Reverse.Modules.ModuleNames\Reverse.Modules.ModuleNames.csproj", "{FB48014F-0B03-4D3C-90D6-0D8EEC73EB34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse.Infrastructure.CustomControls", "Infrastructure\Reverse.Infrastructure.CustomControls\Reverse.Infrastructure.CustomControls.csproj", "{3E671555-4A3E-4214-B282-8332B1585101}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse.Infrastructure.CustomControls", "Infrastructure\Reverse.Infrastructure.CustomControls\Reverse.Infrastructure.CustomControls.csproj", "{3E671555-4A3E-4214-B282-8332B1585101}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

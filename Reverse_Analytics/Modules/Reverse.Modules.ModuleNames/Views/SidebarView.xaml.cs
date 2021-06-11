@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Reverse.Modules.ModuleNames.Views
@@ -20,7 +19,7 @@ namespace Reverse.Modules.ModuleNames.Views
 
         void SidebarView_Loaded(object sender, RoutedEventArgs e)
         {
-            FocusManager.SetFocusedElement(firstStack, firstStack.Children[1]);
+            //FocusManager.SetFocusedElement(firstStack, firstStack.Children[1]);
             //previousFocusedElement = firstStack;
         }
 

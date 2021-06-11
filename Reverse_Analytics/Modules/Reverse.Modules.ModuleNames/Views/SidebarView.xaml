@@ -51,7 +51,7 @@
                 <Rectangle Fill="Red"
                            VerticalAlignment="Stretch" 
                            Width="4" 
-                           Visibility="Visible"/>
+                           Visibility="Hidden"/>
                 <buttons:NavigationButton
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Suppliers}">
                     <StackPanel Orientation="Horizontal">
