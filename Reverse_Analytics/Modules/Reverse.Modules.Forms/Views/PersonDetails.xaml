@@ -4,9 +4,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Reverse.Modules.Forms.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d"
+             Width="450" Height="600">
     <Grid>
-            
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Label Content="John Done"/>
+            <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon.png"
+                   Width="25" Height="24"
+                   HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TabControl>
+                <TabItem Header="Общие">
+                    
+                </TabItem>
+                <TabItem Header="Сводый отчёт">
+                    
+                </TabItem>
+                <TabItem Header="Статистика">
+                    
+                </TabItem>
+            </TabControl>
+        </StackPanel>
     </Grid>
 </UserControl>
