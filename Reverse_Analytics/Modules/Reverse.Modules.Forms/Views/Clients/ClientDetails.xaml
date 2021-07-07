@@ -57,105 +57,116 @@
             </Setter>
         </Style>
     </UserControl.Resources>
+    
+    <Border>
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.8" 
+                Color="Gray" />
+        </Border.Effect>
 
-    <Grid>
+        <Grid Background="White">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="5*"/>
-        </Grid.RowDefinitions>
+                <Border BorderThickness="1" BorderBrush="Black">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" 
-                    HorizontalAlignment="Left"
-                    Margin="2">
-            <Separator BorderThickness="2" Height="35"/>
-            <Button x:Name="closeButton"
-                        Width="50"
-                        BorderThickness="0"
-                        FontSize="18"
-                        Background="White"
-                        Style="{StaticResource closeButton}">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon-gray.png"
-                           Width="20"
-                           Height="20"/>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-
-        <Label Content="{Binding PersonName}" 
-               FontSize="16"
-               HorizontalAlignment="Right"/>
-
-        <StackPanel Grid.Row="1" Margin="5,50,0,0">
-            <TabControl>
-                <TabItem Header="Общие"
-                         Width="100"
-                         Style="{DynamicResource TabItemStyle}">
-                    <StackPanel>
-                        <StackPanel Margin="10">
-                            <Label Content="{Binding ClientsNames}" />
-                            <TextBox Margin="2"
-                                 Height="20"
-                                 Width="200"
-                                 Text=""
-                                 HorizontalAlignment="Left"/>
-                        </StackPanel>
-                        <StackPanel Margin="10">
-                            <Label Content="Адрес"/>
-                            <TextBox Margin="2"
-                                 Height="20"
-                                 Width="200"
-                                 Text=""
-                                 HorizontalAlignment="Left"/>
-                        </StackPanel>
-                        <StackPanel Margin="10">
-                            <Label Content="Телефон"/>
-                            <TextBox Margin="2"
-                                 Height="20"
-                                 Width="120"
-                                 Text=""
-                                 HorizontalAlignment="Left"/>
-                            <Label Content="+ Добавить телефон"
-                                   FontSize="10"
-                                   Foreground="#6AA6DA"/>
-                        </StackPanel>
-                        <StackPanel Margin="10">
-                            <Label Content="Скидка %"/>
-                            <TextBox Margin="2"
-                                 Height="20"
-                                 Width="120"
-                                 Text=""
-                                 HorizontalAlignment="Left"/>
-                        </StackPanel>
-                        <StackPanel>
-                            <DockPanel Margin="10,50,0,10">
-                                <Button Content="Сохранить"
-                                        Background="#337AB7"
-                                        Foreground="White"
-                                        Width="80"
-                                        Height="25"
-                                        DockPanel.Dock="Left"/>
-                                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\delete-icon.png"
-                                       HorizontalAlignment="Right"
-                                       Margin="0,0,5,0"
+                    <StackPanel Orientation="Horizontal" 
+                                HorizontalAlignment="Left"
+                                Margin="2">
+                        <Separator BorderThickness="2" Height="35"/>
+                        <Button x:Name="closeButton"
+                                Width="50"
+                                BorderThickness="0"
+                                FontSize="18"
+                                Background="White"
+                                Command="{Binding CloseClientDetailsCommand}"
+                                Style="{StaticResource closeButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon-gray.png"
                                        Width="20"
                                        Height="20"/>
-                            </DockPanel>
-                        </StackPanel>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
-                </TabItem>
-                <TabItem Header="Сводый отчёт"
-                         Width="130"
-                         Style="{DynamicResource TabItemStyle}">
-                    <controls:ClientInformation/>
-                </TabItem>
-                <TabItem Header="Статистика"
-                         Width="130"
-                         Style="{DynamicResource TabItemStyle}">
 
-                </TabItem>
-            </TabControl>
-        </StackPanel>
-    </Grid>
+                    <Label Content="{Binding CustomerName}" 
+                           FontSize="16"
+                           HorizontalAlignment="Right"/>
+
+                    <StackPanel Grid.Row="1" Margin="0,50,0,0">
+                        <TabControl BorderThickness="0,1,0,1">
+                            <TabItem Header="Общие"
+                                     Width="100"
+                                     Style="{DynamicResource TabItemStyle}">
+                                <StackPanel>
+                                    <StackPanel Margin="10">
+                                        <Label Content="Имя клиента" />
+                                        <TextBox Margin="2"
+                                                 Height="20"
+                                                 Width="200"
+                                                 Text="{Binding CustomerName}"
+                                                 HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="10">
+                                        <Label Content="Адрес"/>
+                                        <TextBox Margin="2"
+                                                 Height="20"
+                                                 Width="200"
+                                                 Text="{Binding CustomerAddress}"
+                                                 HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="10">
+                                        <Label Content="Телефон"/>
+                                        <TextBox Margin="2"
+                                                 Height="20"
+                                                 Width="120"
+                                                 Text="{Binding CustomerPhoneNumber}"
+                                                 HorizontalAlignment="Left"/>
+                                        <Label Content="+ Добавить телефон"
+                                               FontSize="10"
+                                               Foreground="#6AA6DA"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="10">
+                                        <Label Content="Скидка %"/>
+                                        <TextBox Margin="2"
+                                                 Height="20"
+                                                 Width="120"
+                                                 Text="{Binding CustomerBonus}"
+                                                 HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <DockPanel Margin="10,50,0,10">
+                                            <Button Content="Сохранить"
+                                                    Background="#337AB7"
+                                                    Foreground="White"
+                                                    Width="80"
+                                                    Height="25"
+                                                    DockPanel.Dock="Left"/>
+                                            <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\delete-icon.png"
+                                                    HorizontalAlignment="Right"
+                                                    Margin="0,0,5,0"
+                                                    Width="20"
+                                                    Height="20"/>
+                                        </DockPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem Header="Сводый отчёт"
+                                    Width="130"
+                                    Style="{DynamicResource TabItemStyle}">
+                                <controls:ClientInformation/>
+                            </TabItem>
+                            <TabItem Header="Статистика"
+                                    Width="130"
+                                    Style="{DynamicResource TabItemStyle}">
+                            </TabItem>
+                        </TabControl>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
 </UserControl>

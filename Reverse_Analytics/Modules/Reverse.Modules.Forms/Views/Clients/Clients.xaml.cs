@@ -25,7 +25,7 @@ namespace Reverse.Modules.Forms.Views.Clients
                 Topmost = true
             };
 
-            // Open the child window
+            // Open the child window 
             wdwSettings.ShowDialog();
 
             //restore Opacity and remove blur after closing the child window
@@ -35,15 +35,7 @@ namespace Reverse.Modules.Forms.Views.Clients
 
         private void DataGrid_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            this.Opacity = 0.5;
-            this.Effect = new BlurEffect();
-
-            // Set the options for the settings (child) window
-            personDetails.Visibility = System.Windows.Visibility.Visible;
-
-            //restore Opacity and remove blur after closing the child window
-            this.Opacity = 1;
-            this.Effect = null;
+            //clientDetails.Visibility = System.Windows.Visibility.Visible;
         }
     }
 }

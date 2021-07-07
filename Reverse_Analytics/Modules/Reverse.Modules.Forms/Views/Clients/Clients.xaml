@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:Reverse.Modules.Forms.Views.Clients"
              xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views.Clients"
              xmlns:buttons="clr-namespace:Reverse.Infrastructure.CustomControls.Buttons;assembly=Reverse.Infrastructure.CustomControls"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
     <UserControl.Resources>
@@ -54,7 +56,10 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.RowSpan="2" Orientation="Vertical">
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Orientation="Vertical" x:Name="contentPanel"
+                    Opacity="{Binding ContentPanelOpacity}"
+                    Effect="{Binding ContentPanelEffect}"
+                    IsEnabled="{Binding ContentPanelEnabled}">
             <Label Margin="15,5,5,5" 
                    Content="Клиенты" 
                    FontSize="20" Foreground="#808080"
@@ -72,7 +77,8 @@
                      HorizontalAlignment="Left" 
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
 
-            <DataGrid Margin="25,25,5,5"
+            <DataGrid x:Name="clientsDataGrid"
+                      Margin="25,25,5,5"
                       HorizontalAlignment="Left"
                       AutoGenerateColumns="False"
                       CanUserDeleteRows="False" IsReadOnly="True"
@@ -80,7 +86,7 @@
                       GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="Gray" 
                       MaxHeight="450"  Width="455"
                       ItemsSource="{Binding Clients}"
-                      MouseDoubleClick="DataGrid_MouseDoubleClick">
+                      SelectedItem="{Binding SelectedClient}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Имя клиента" 
                                         Binding="{Binding FullName}"
@@ -89,36 +95,19 @@
                                         Binding="{Binding PhoneNumber}"
                                         Width="200" FontSize="15"/>
                 </DataGrid.Columns>
+                <DataGrid.InputBindings>
+                    <MouseBinding MouseAction="LeftDoubleClick"
+                  Command="{Binding Path=DataGridDoubleClickCommand}"
+                  CommandParameter="{Binding ElementName=clientsDataGrid, Path=SelectedItem}" />
+                </DataGrid.InputBindings>
+
             </DataGrid>
         </StackPanel>
 
-        <Border HorizontalAlignment="Right" 
-                Grid.Row="0" Grid.RowSpan="2"
-                BorderBrush="Black" BorderThickness="2">
-            <Grid>
-                <Border Margin="68,67,60,67"
-                        BorderBrush="Black"
-                        BorderThickness="1"
-                        CornerRadius="10">  
-                    <Border.Effect>
-                        <DropShadowEffect />
-                    </Border.Effect>
-                </Border>
-                <Border Margin="68,67,60,67"
-            BorderBrush="Black"
-            BorderThickness="1"
-            CornerRadius="10">
-
-                    <Rectangle Fill="White"
-                   Stroke="Black"
-                   Margin="37,89,118,98">
-                    </Rectangle>
-                </Border>
-                <StackPanel x:Name="personDetails"      
-                        Visibility="Visible">
-                    <controls:ClientDetails DockPanel.Dock="Right" Width="400"/>
-                </StackPanel>
-            </Grid>
-        </Border>
+        <controls:ClientDetails x:Name="clientDetails" Grid.Row="0" Grid.RowSpan="2" 
+                                HorizontalAlignment="Right" 
+                                DockPanel.Dock="Right" 
+                                Width="400" 
+                                Visibility="{Binding ClientDetailsVisibility}"/>
     </Grid>
 </UserControl>

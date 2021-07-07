@@ -9,6 +9,8 @@ namespace Reverse.Infrastructure.Models
         public int IdClient { get; set; }
         public string FullName { get; set; }
         public string PhoneNumber { get; set; }
+        public string Address { get; set; } = "SomeAddress";
+        public double Bonus { get; set; }
 
         public Client(string fullName, string phoneNumber)
         {

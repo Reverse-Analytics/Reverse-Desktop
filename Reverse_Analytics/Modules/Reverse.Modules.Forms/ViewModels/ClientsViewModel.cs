@@ -7,6 +7,8 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using Prism.Commands;
 using System.Windows.Media.Effects;
+using System.Windows;
+using GalaSoft.MvvmLight.Command;
 
 namespace Reverse.Modules.Forms.ViewModels.Clients
 {
@@ -16,17 +18,81 @@ namespace Reverse.Modules.Forms.ViewModels.Clients
         /*public static double ControlOpacity { get; set; }
         public static Effect ControlEffect { get; set; }*/
 
-        public string PersonName { get; set; } = "Some Name";
+        public string PersonName { get; set; } = "Some Names";
         public string ClientsNames { get; set; } = "Client name";
 
         #region Commands
 
         public DelegateCommand<string> SetSearchTextCommand { get; set; }
         public DelegateCommand<Client> NavigateToDetailsCommand { get; set; }
+        public DelegateCommand CloseClientDetailsCommand { get; set; }
+        public DelegateCommand<Client> DataGridDoubleClickCommand { get; set; }
+
+        #endregion
+
+        #region Customer details Properties
+
+        private string _customerFullName;
+        public string CustomerFullName
+        {
+            get => _customerFullName;
+            set
+            {
+                SetProperty(ref _customerFullName, value);
+                SelectedClient.FullName = value;
+            }
+        }
+
+        private string _customerAdress;
+        public string CustomerAddress 
+        {
+            get => _customerAdress;
+            set
+            {
+                SetProperty(ref _customerAdress, value);
+                SelectedClient.Address = value;
+            }
+        }
+
+        private string _clientPhoneNumber;
+        public string ClientPhoneNumber 
+        {
+            get => _clientPhoneNumber;
+            set
+            {
+                SetProperty(ref _clientPhoneNumber, value);
+                SelectedClient.PhoneNumber = _clientPhoneNumber;
+            }
+        }
+
+        private double _clientBonus;
+        public double ClientBonus 
+        {
+            get => _clientBonus;
+            set
+            {
+                SetProperty(ref _clientBonus, value);
+                SelectedClient.Bonus = value;
+            }
+        }
 
         #endregion
 
         #region Properties
+
+        private Client _selectedClient;
+        public Client SelectedClient 
+        {
+            get => _selectedClient;
+            set
+            {
+                SetProperty(ref _selectedClient, value);
+                _customerFullName = _selectedClient.FullName;
+                _customerAdress = _selectedClient.Address;
+                _clientPhoneNumber = _selectedClient.PhoneNumber;
+                _clientBonus = _selectedClient.Bonus;
+            }
+        }
 
         private string _searchText;
 
@@ -45,6 +111,33 @@ namespace Reverse.Modules.Forms.ViewModels.Clients
                 }
                 SetProperty(ref _searchText, value);
             }
+        }
+
+        private double _contentPanelOpacity;
+        private Effect _contentPanelEffect;
+        private bool _contentPanelEnabled;
+
+        public double ContentPanelOpacity 
+        {
+            get => _contentPanelOpacity;
+            set => SetProperty(ref _contentPanelOpacity, value);
+        }
+        public Effect ContentPanelEffect 
+        {
+            get => _contentPanelEffect;
+            set => SetProperty(ref _contentPanelEffect, value);
+        }
+        public bool ContentPanelEnabled 
+        {
+            get => _contentPanelEnabled;
+            set => SetProperty(ref _contentPanelEnabled, value);
+        }
+
+        private Visibility _clientDetailsVisibility;
+        public Visibility ClientDetailsVisibility 
+        {
+            get => _clientDetailsVisibility;
+            set => SetProperty(ref _clientDetailsVisibility, value);
         }
 
         #endregion
@@ -68,6 +161,14 @@ namespace Reverse.Modules.Forms.ViewModels.Clients
         {
             SetSearchTextCommand = new DelegateCommand<string>(SetSearchText);
             NavigateToDetailsCommand = new DelegateCommand<Client>(FastAction);
+            CloseClientDetailsCommand = new DelegateCommand(ClosePersonDetailsControl);
+            DataGridDoubleClickCommand = new DelegateCommand<Client>(DataGridDoubleClicked);
+
+            ContentPanelOpacity = 1;
+            ContentPanelEffect = null;
+            ContentPanelEnabled = true;
+
+            ClientDetailsVisibility = Visibility.Hidden;
 
             _clientsData = new List<Client>
             {
@@ -122,6 +223,24 @@ namespace Reverse.Modules.Forms.ViewModels.Clients
             base.OnNavigatedTo(navigationContext);
 
             _journal = navigationContext.NavigationService.Journal;
+        }
+        
+        private void ClosePersonDetailsControl()
+        {
+            ContentPanelOpacity = 1;
+            ContentPanelEffect = null;
+            ContentPanelEnabled = true;
+
+            ClientDetailsVisibility = Visibility.Hidden;
+        }
+
+        private void DataGridDoubleClicked(Client selectedClient)
+        {
+            ContentPanelOpacity = 0.5;
+            ContentPanelEffect = new BlurEffect();
+            ContentPanelEnabled = false;
+
+            ClientDetailsVisibility = Visibility.Visible;
         }
 
         #endregion
