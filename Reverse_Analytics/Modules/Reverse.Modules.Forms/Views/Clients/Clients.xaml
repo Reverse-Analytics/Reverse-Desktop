@@ -107,7 +107,7 @@
         <controls:ClientDetails x:Name="clientDetails" Grid.Row="0" Grid.RowSpan="2" 
                                 HorizontalAlignment="Right" 
                                 DockPanel.Dock="Right" 
-                                Width="400" 
+                                Width="450" 
                                 Visibility="{Binding ClientDetailsVisibility}"/>
     </Grid>
 </UserControl>

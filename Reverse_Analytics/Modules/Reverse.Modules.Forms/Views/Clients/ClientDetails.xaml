@@ -102,70 +102,9 @@
                         <TabControl BorderThickness="0,1,0,1">
                             <TabItem Header="Общие"
                                      Width="100"
+                                     HorizontalAlignment="Center"
                                      Style="{DynamicResource TabItemStyle}">
-                                <StackPanel>
-                                    <StackPanel Margin="10">
-                                        <Label Content="Имя клиента" FontSize="16"/>
-                                        <TextBox Margin="2"
-                                                 Height="25"
-                                                 Width="250"
-                                                 VerticalContentAlignment="Center"
-                                                 FontSize="14"
-                                                 Text="{Binding CustomerFullName}"
-                                                 HorizontalAlignment="Left"/>
-                                    </StackPanel>
-                                    <StackPanel Margin="10">
-                                        <Label Content="Адрес"
-                                               FontSize="16"/>
-                                        <TextBox Margin="2"
-                                                 Height="25"
-                                                 Width="250"
-                                                 VerticalContentAlignment="Center"
-                                                 FontSize="14"
-                                                 Text="{Binding CustomerAddress}"
-                                                 HorizontalAlignment="Left"/>
-                                    </StackPanel>
-                                    <StackPanel Margin="10">
-                                        <Label Content="Телефон"
-                                               FontSize="16"/>
-                                        <TextBox Margin="2"
-                                                 Height="22"
-                                                 Width="130"
-                                                 VerticalContentAlignment="Center"
-                                                 FontSize="14"
-                                                 Text="{Binding ClientPhoneNumber}"
-                                                 HorizontalAlignment="Left"/>
-                                        <Label Content="+ Добавить телефон"
-                                               FontSize="10"
-                                               Foreground="#6AA6DA"/>
-                                    </StackPanel>
-                                    <StackPanel Margin="10">
-                                        <Label Content="Скидка %"
-                                               FontSize="16"/>
-                                        <TextBox Margin="2"
-                                                 Height="22"
-                                                 Width="130"
-                                                 VerticalContentAlignment="Center"
-                                                 FontSize="14"
-                                                 Text="{Binding ClientBonus}"
-                                                 HorizontalAlignment="Left"/>
-                                    </StackPanel>
-                                    <StackPanel>
-                                        <DockPanel Margin="10,50,0,10">
-                                            <Button Content="Сохранить"
-                                                    Background="#337AB7"
-                                                    Foreground="White"
-                                                    Width="80"
-                                                    Height="25"
-                                                    DockPanel.Dock="Left"/>
-                                            <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\delete-icon.png"
-                                                    HorizontalAlignment="Right"
-                                                    Margin="0,0,5,0"
-                                                    Width="20"
-                                                    Height="20"/>
-                                        </DockPanel>
-                                    </StackPanel>
-                                </StackPanel>
+                                <controls:ClientInformation/>
                             </TabItem>
                             <TabItem Header="Сводый отчёт"
                                     Width="130"

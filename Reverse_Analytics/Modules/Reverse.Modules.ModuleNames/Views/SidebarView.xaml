@@ -43,9 +43,8 @@
                     Background="#363740"
                     Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Center">
 
-            <Ellipse Margin="5,10,5,15"
-                     Width="90" Height="74" 
-                     Fill="#C4C4C4"/>
+            <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\login_logo.png" Width="80"
+                   Margin="5,10,5,15"/>
 
             <common:NavigationStackPanel x:Name="firstStack" GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
