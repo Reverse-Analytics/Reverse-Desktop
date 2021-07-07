@@ -69,14 +69,13 @@
                 <Border BorderThickness="1" BorderBrush="Black">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="5*"/>
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Horizontal" 
                                 HorizontalAlignment="Left"
                                 Margin="2">
-                        <Separator BorderThickness="2" Height="35"/>
                         <Button x:Name="closeButton"
                                 Width="50"
                                 BorderThickness="0"
@@ -92,9 +91,12 @@
                         </Button>
                     </StackPanel>
 
-                    <Label Content="{Binding CustomerName}" 
-                           FontSize="16"
+                    <Label Content="{Binding CustomerFullName}" 
+                           Margin="15,5,5,5" 
+                           FontSize="18" Foreground="#808080"
                            HorizontalAlignment="Right"/>
+
+                    <Separator Background="Black" BorderThickness="1"/>
 
                     <StackPanel Grid.Row="1" Margin="0,50,0,0">
                         <TabControl BorderThickness="0,1,0,1">
@@ -103,38 +105,49 @@
                                      Style="{DynamicResource TabItemStyle}">
                                 <StackPanel>
                                     <StackPanel Margin="10">
-                                        <Label Content="Имя клиента" />
+                                        <Label Content="Имя клиента" FontSize="16"/>
                                         <TextBox Margin="2"
-                                                 Height="20"
-                                                 Width="200"
-                                                 Text="{Binding CustomerName}"
+                                                 Height="25"
+                                                 Width="250"
+                                                 VerticalContentAlignment="Center"
+                                                 FontSize="14"
+                                                 Text="{Binding CustomerFullName}"
                                                  HorizontalAlignment="Left"/>
                                     </StackPanel>
                                     <StackPanel Margin="10">
-                                        <Label Content="Адрес"/>
+                                        <Label Content="Адрес"
+                                               FontSize="16"/>
                                         <TextBox Margin="2"
-                                                 Height="20"
-                                                 Width="200"
+                                                 Height="25"
+                                                 Width="250"
+                                                 VerticalContentAlignment="Center"
+                                                 FontSize="14"
                                                  Text="{Binding CustomerAddress}"
                                                  HorizontalAlignment="Left"/>
                                     </StackPanel>
                                     <StackPanel Margin="10">
-                                        <Label Content="Телефон"/>
+                                        <Label Content="Телефон"
+                                               FontSize="16"/>
                                         <TextBox Margin="2"
-                                                 Height="20"
-                                                 Width="120"
-                                                 Text="{Binding CustomerPhoneNumber}"
+                                                 Height="22"
+                                                 Width="130"
+                                                 VerticalContentAlignment="Center"
+                                                 FontSize="14"
+                                                 Text="{Binding ClientPhoneNumber}"
                                                  HorizontalAlignment="Left"/>
                                         <Label Content="+ Добавить телефон"
                                                FontSize="10"
                                                Foreground="#6AA6DA"/>
                                     </StackPanel>
                                     <StackPanel Margin="10">
-                                        <Label Content="Скидка %"/>
+                                        <Label Content="Скидка %"
+                                               FontSize="16"/>
                                         <TextBox Margin="2"
-                                                 Height="20"
-                                                 Width="120"
-                                                 Text="{Binding CustomerBonus}"
+                                                 Height="22"
+                                                 Width="130"
+                                                 VerticalContentAlignment="Center"
+                                                 FontSize="14"
+                                                 Text="{Binding ClientBonus}"
                                                  HorizontalAlignment="Left"/>
                                     </StackPanel>
                                     <StackPanel>

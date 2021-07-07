@@ -87,10 +87,10 @@ namespace Reverse.Modules.Forms.ViewModels.Clients
             set
             {
                 SetProperty(ref _selectedClient, value);
-                _customerFullName = _selectedClient.FullName;
-                _customerAdress = _selectedClient.Address;
-                _clientPhoneNumber = _selectedClient.PhoneNumber;
-                _clientBonus = _selectedClient.Bonus;
+                CustomerFullName = _selectedClient.FullName;
+                CustomerAddress = _selectedClient.Address;
+                ClientPhoneNumber = _selectedClient.PhoneNumber;
+                ClientBonus = _selectedClient.Bonus;
             }
         }
 
