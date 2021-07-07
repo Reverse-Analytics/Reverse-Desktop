@@ -17,6 +17,7 @@ namespace Reverse.Modules.Forms.ViewModels.Clients
         public static Effect ControlEffect { get; set; }*/
 
         public string PersonName { get; set; } = "Some Name";
+        public string ClientsNames { get; set; } = "Client name";
 
         #region Commands
 

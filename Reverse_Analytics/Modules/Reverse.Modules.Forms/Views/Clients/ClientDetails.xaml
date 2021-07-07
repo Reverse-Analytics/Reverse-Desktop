@@ -65,11 +65,8 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="{Binding PersonName}" 
-                   FontSize="16"/>
-
         <StackPanel Orientation="Horizontal" 
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Left"
                     Margin="2">
             <Separator BorderThickness="2" Height="35"/>
             <Button x:Name="closeButton"
@@ -86,6 +83,10 @@
             </Button>
         </StackPanel>
 
+        <Label Content="{Binding PersonName}" 
+               FontSize="16"
+               HorizontalAlignment="Right"/>
+
         <StackPanel Grid.Row="1" Margin="5,50,0,0">
             <TabControl>
                 <TabItem Header="Общие"
@@ -93,7 +94,7 @@
                          Style="{DynamicResource TabItemStyle}">
                     <StackPanel>
                         <StackPanel Margin="10">
-                            <Label Content="Имя Клиента" />
+                            <Label Content="{Binding ClientsNames}" />
                             <TextBox Margin="2"
                                  Height="20"
                                  Width="200"
