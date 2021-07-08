@@ -59,12 +59,19 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
     </UserControl.Resources>
+    
     <Grid>
-        <StackPanel Grid.Column="1" Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Orientation="Vertical" x:Name="contentPanel"
+                    Opacity="{Binding ContentPanelOpacity}"
+                    Effect="{Binding ContentPanelEffect}"
+                    IsEnabled="{Binding ContentPanelEnabled}">
             <Label Margin="15,5,5,5" 
-                   Content="Поставщики" 
+                   Content="Клиенты" 
                    FontSize="20" Foreground="#808080"
                    HorizontalAlignment="Center"/>
 
@@ -72,15 +79,15 @@
                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                        Background="Black"/>
 
-            <buttons:AddButton Content="+ Поставщики"/>
+            <buttons:AddButton Content="+ Клиенты" Click="AddButton_Click"/>
 
             <TextBox Height="30" Width="300" 
                      Margin="25,25,5,5" FontSize="16"
-                     Style="{StaticResource WaterMarkStyle}" Tag="Поиск поставщика" 
+                     Style="{StaticResource WaterMarkStyle}" Tag="Поиск клиента" 
                      HorizontalAlignment="Left" 
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
 
-            <DataGrid x:Name="supliersDataGrid"
+            <DataGrid x:Name="clientsDataGrid"
                       Margin="25,25,5,5"
                       HorizontalAlignment="Left"
                       AutoGenerateColumns="False"
@@ -91,26 +98,26 @@
                       ItemsSource="{Binding Suppliers}"
                       SelectedItem="{Binding SelectedSupplier}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Имя поставщика"
+                    <DataGridTextColumn Header="Имя клиента" 
                                         Binding="{Binding FullName}"
-                                        Width="245" FontSize="15">
-                    </DataGridTextColumn>
+                                        Width="245" FontSize="15"/>
                     <DataGridTextColumn Header="Телефон" 
                                         Binding="{Binding PhoneNumber}"
                                         Width="200" FontSize="15"/>
                 </DataGrid.Columns>
                 <DataGrid.InputBindings>
                     <MouseBinding MouseAction="LeftDoubleClick"
-                                  Command="{Binding Path=DataGridDoubleClickCommand}"
-                                  CommandParameter="{Binding ElementName=supliersDataGrid, Path=SelectedItem}" />
+                  Command="{Binding Path=DataGridDoubleClickCommand}"
+                  CommandParameter="{Binding ElementName=clientsDataGrid, Path=SelectedItem}" />
                 </DataGrid.InputBindings>
+
             </DataGrid>
         </StackPanel>
 
         <controls:SupplierDetails x:Name="clientDetails" Grid.Row="0" Grid.RowSpan="2" 
-                                  HorizontalAlignment="Right" 
-                                  DockPanel.Dock="Right" 
-                                  Width="450" 
-                                  Visibility="{Binding SupplierDetailsVisibility}"/>
+                                HorizontalAlignment="Right" 
+                                DockPanel.Dock="Right" 
+                                Width="450" 
+                                Visibility="{Binding SupplierDetailsVisibility}"/>
     </Grid>
 </UserControl>

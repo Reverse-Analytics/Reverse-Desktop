@@ -7,6 +7,52 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <StackPanel>
+            <StackPanel Margin="10">
+                <Label Content="За период с 01/01/2020 по 15/01/2020" FontSize="14"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <ListView Name="lvUsers" 
+                          Width="380"
+                          MaxHeight="250"
+                          HorizontalAlignment="Left"
+                          ItemsSource="{Binding Suppliers}">
+                    <ListView.View>
+                        <GridView>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                            <GridViewColumn Header="Дата" Width="90" DisplayMemberBinding="{Binding FullName}" />
+                            <GridViewColumn Header="Количество" Width="130" DisplayMemberBinding="{Binding PhoneNumber}" />
+                            <GridViewColumn Header="Прибыль" Width="130" DisplayMemberBinding="{Binding Bonus}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView HorizontalAlignment="Left"
+                          ItemsSource="{Binding Suppliers}"
+                          MaxHeight="200"
+                          Margin="0,10,0,0"
+                          BorderThickness="0">
+                    <ListView.View>
+                        <GridView>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="FontSize" Value="9"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                            <GridViewColumn Header="Дата" Width="60" DisplayMemberBinding="{Binding FullName}" />
+                            <GridViewColumn Header="Количество" Width="70" DisplayMemberBinding="{Binding PhoneNumber}" />
+                            <GridViewColumn Header="Приходная цена" Width="90" DisplayMemberBinding="{Binding PhoneNumber}" />
+                            <GridViewColumn Header="Продажная цена" Width="90" DisplayMemberBinding="{Binding PhoneNumber}" />
+                            <GridViewColumn Header="Прибыль" Width="70" DisplayMemberBinding="{Binding PhoneNumber}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>
