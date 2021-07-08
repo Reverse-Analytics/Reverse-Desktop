@@ -8,38 +8,51 @@
     <Grid>
         <StackPanel Height="450">
             <StackPanel Margin="10">
-                <Label Content="За период с 01/01/2020 по 15/01/2020" FontSize="16"/>
+                <Label Content="За период с 01/01/2020 по 15/01/2020" FontSize="14"/>
             </StackPanel>
-            <StackPanel Margin="10">
-                <DataGrid x:Name="clientsDataGrid"
-                      HorizontalAlignment="Left"
-                      AutoGenerateColumns="False"
-                      CanUserDeleteRows="False" IsReadOnly="True"
-                      CanUserResizeColumns="False" CanUserResizeRows="False"
-                      GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="Gray">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Дата" 
-                                        Width="100" FontSize="8"/>
-                        <DataGridTextColumn Header="Выплата" 
-                                        Width="120" FontSize="8"/>
-                        <DataGridTextColumn Header="Приход" 
-                                        Width="120" FontSize="8"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Сальдо на начало"/>
-                    <Label Content="-28,000,000" Margin="150,0,0,0"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Сальдо на конец"/>
-                    <Label Content="-30,000,000" Margin="180,0,0,0" HorizontalContentAlignment="Right"/>
-                    <CheckBox Margin="20,0,0,0">
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <ListView Name="lvUsers" 
+                          Width="380" 
+                          HorizontalAlignment="Left"
+                          ItemsSource="{Binding Clients}"
+                          MaxHeight="300">
+                    <ListView.View>
+                        <GridView>
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                            <GridViewColumn Header="Дата" Width="90" DisplayMemberBinding="{Binding FullName}" />
+                            <GridViewColumn Header="Выплата" Width="130" DisplayMemberBinding="{Binding PhoneNumber}" />
+                            <GridViewColumn Header="Приход" Width="130" DisplayMemberBinding="{Binding Bonus}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel VerticalAlignment="Bottom" Margin="20,0,0,0">
+                    <CheckBox>
                         <CheckBox.LayoutTransform>
-                            <ScaleTransform ScaleX="2" ScaleY="2" />
+                            <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
                         </CheckBox.LayoutTransform>
                     </CheckBox>
                 </StackPanel>
             </StackPanel>
+            <DockPanel>
+                <DockPanel DockPanel.Dock="Left" Margin="10,0,0,0">
+                    <StackPanel>
+                        <Label Content="Сальдо на начало"/>
+                        <Label Content="Сальдо на конец"/>
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Right">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <StackPanel Margin="0,0,40,0">
+                            <Label Content="-32,000,000"/>
+                            <Label Content="-28,000,000"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DockPanel>
+            </DockPanel>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -116,6 +116,7 @@
                             <TabItem Header="Статистика"
                                     Width="130"
                                     Style="{DynamicResource TabItemStyle}">
+                                <controls:ClientStatistics/>
                             </TabItem>
                         </TabControl>
                     </StackPanel>
