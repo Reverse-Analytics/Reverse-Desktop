@@ -54,8 +54,8 @@
                 <buttons:NavigationButton
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Suppliers}">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Поставщики" Width="130" TextAlignment="Center"/>
-                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\supplier-icon.png"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\supplier-icon.png" Margin="20,0,0,0"/>
+                        <TextBlock Text="Поставщики" Width="130" TextAlignment="Left" Margin="20,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
             </common:NavigationStackPanel>
@@ -67,8 +67,8 @@
                 <buttons:NavigationButton
                         Command="{Binding FastActionCommand}" CommandParameter="{x:Static enum:ActionEnum.Clients}">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Клиенты" Width="130" TextAlignment="Center"/>
-                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\clients-icon.png"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\clients-icon.png" Margin="20,0,0,0"/>
+                        <TextBlock Text="Клиенты" Width="130" TextAlignment="Left" Margin="20,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
             </common:NavigationStackPanel>
@@ -79,8 +79,8 @@
                            Visibility="Hidden"/>
                 <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Склад" Width="130" TextAlignment="Center"/>
-                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\warehouse-icon.png"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\warehouse-icon.png" Margin="20,0,0,0"/>
+                        <TextBlock Text="Склад" Width="130" TextAlignment="Left" Margin="20,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
             </common:NavigationStackPanel>
@@ -94,11 +94,10 @@
                            Visibility="Hidden"/>
                 <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Приход" Width="130" TextAlignment="Center"/>
-                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png" Margin="20,0,0,0"/>
+                        <TextBlock Text="Приход" Width="130" TextAlignment="Left" Margin="20,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
-                <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\incomes-icon.png"/>
             </common:NavigationStackPanel>
             <common:NavigationStackPanel GotFocus="StackPanel_GotFocus" LostFocus="StackPanel_LostFocus">
                 <Rectangle Fill="Red"
@@ -107,8 +106,8 @@
                            Visibility="Hidden"/>
                 <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Продажи" Width="130" TextAlignment="Center"/>
-                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png" Margin="20,0,0,0"/>
+                        <TextBlock Text="Продажи" Width="130" TextAlignment="Left" Margin="20,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\income-icon.png"/>
@@ -120,8 +119,8 @@
                            Visibility="Hidden"/>
                 <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Долги" Width="130" TextAlignment="Center"/>
-                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\debt-icon.png"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\debt-icon.png" Margin="20,0,0,0"/>
+                        <TextBlock Text="Долги" Width="130" TextAlignment="Left" Margin="20,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
             </common:NavigationStackPanel>
@@ -135,8 +134,8 @@
                            Visibility="Hidden"/>
                 <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Отчёты" Width="130" TextAlignment="Center"/>
-                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\reports-icon.png"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\reports-icon.png" Margin="20,0,0,0"/>
+                        <TextBlock Text="Отчёты" Width="130" TextAlignment="Left" Margin="20,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
             </common:NavigationStackPanel>
@@ -147,8 +146,8 @@
                            Visibility="Hidden"/>
                 <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Аналитика" Width="130" TextAlignment="Center"/>
-                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\analytics.png"/>
+                        <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\analytics.png" Margin="20,0,0,0"/>
+                        <TextBlock Text="Аналитика" Width="130" TextAlignment="Left" Margin="20,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
             </common:NavigationStackPanel>
@@ -162,8 +161,8 @@
                            Visibility="Hidden"/>
                 <buttons:NavigationButton>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Настройки" Width="130" TextAlignment="Center"/>
                         <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\settings-icon.png"/>
+                        <TextBlock Text="Настройки" Width="130" TextAlignment="Center" Margin="10,0,0,0"/>
                     </StackPanel>
                 </buttons:NavigationButton>
             </common:NavigationStackPanel>

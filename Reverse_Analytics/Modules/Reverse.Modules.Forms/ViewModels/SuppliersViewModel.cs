@@ -88,10 +88,38 @@ namespace Reverse.Modules.Forms.ViewModels.Suppliers
         #endregion
 
         #region Supplier details Properties
+        private string _supplierFullName;
+        public string SupplierFullName 
+        {
+            get => _supplierFullName;
+            set
+            {
+                SetProperty(ref _supplierFullName, value);
+                SelectedSupplier.FullName = _supplierFullName;
+            }
+        }
 
-        public string SupplierFullName { get; set; }
-        public string SupplierPhoneNumber { get; set; }
-        public string SupplierAddress { get; set; }
+        private string _supplierPhoneNumber;
+        public string SupplierPhoneNumber 
+        {
+            get => _supplierAddress;
+            set
+            {
+                SetProperty(ref _supplierPhoneNumber, value);
+                SelectedSupplier.PhoneNumber = _supplierPhoneNumber;
+            }
+        }
+
+        private string _supplierAddress;
+        public string SupplierAddress 
+        {
+            get => _supplierAddress;
+            set
+            {
+                SetProperty(ref _supplierAddress, value);
+                SelectedSupplier.Address = _supplierAddress;
+            }
+        }
 
         #endregion
 
@@ -133,19 +161,19 @@ namespace Reverse.Modules.Forms.ViewModels.Suppliers
                 new Supplier("Вазира", "+998(91) 773 21 02"),
                 new Supplier("Володя", "+998(81) 922 95 13"),
                 new Supplier("Виктор", "+998(90) 253 42 65"),
-                new Supplier("Ахмад ака", "+998(71) 203 22 22"),
-                new Supplier("Аваз ака", "+998(90) 213 42 21"),
-                new Supplier("Бахром ака", "+998(94) 412 31 52"),
-                new Supplier("Ботир ака", "+998(93) 621 25 23"),
-                new Supplier("Виктор", "+998(90) 253 42 65"),
-                new Supplier("Ахмад ака", "+998(71) 203 22 22"),
-                new Supplier("Аваз ака", "+998(90) 213 42 21"),
-                new Supplier("Бахром ака", "+998(94) 412 31 52"),
-                new Supplier("Ботир ака", "+998(93) 621 25 23"),
-                new Supplier("Вазира", "+998(91) 773 21 02"),
-                new Supplier("Володя", "+998(81) 922 95 13"),
-                new Supplier("Виктор", "+998(90) 253 42 65"),
-                new Supplier("Геннадий", "+998(94) 223 12 52")
+                //new Supplier("Ахмад ака", "+998(71) 203 22 22"),
+                //new Supplier("Аваз ака", "+998(90) 213 42 21"),
+                //new Supplier("Бахром ака", "+998(94) 412 31 52"),
+                //new Supplier("Ботир ака", "+998(93) 621 25 23"),
+                //new Supplier("Виктор", "+998(90) 253 42 65"),
+                //new Supplier("Ахмад ака", "+998(71) 203 22 22"),
+                //new Supplier("Аваз ака", "+998(90) 213 42 21"),
+                //new Supplier("Бахром ака", "+998(94) 412 31 52"),
+                //new Supplier("Ботир ака", "+998(93) 621 25 23"),
+                //new Supplier("Вазира", "+998(91) 773 21 02"),
+                //new Supplier("Володя", "+998(81) 922 95 13"),
+                //new Supplier("Виктор", "+998(90) 253 42 65"),
+                //new Supplier("Геннадий", "+998(94) 223 12 52")
             };
 
             _suppliers = new ObservableCollection<Supplier>(_suppliersData);

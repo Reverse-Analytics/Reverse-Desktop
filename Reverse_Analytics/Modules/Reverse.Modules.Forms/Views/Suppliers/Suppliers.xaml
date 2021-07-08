@@ -71,7 +71,7 @@
                     Effect="{Binding ContentPanelEffect}"
                     IsEnabled="{Binding ContentPanelEnabled}">
             <Label Margin="15,5,5,5" 
-                   Content="Клиенты" 
+                   Content="Поставщики" 
                    FontSize="20" Foreground="#808080"
                    HorizontalAlignment="Center"/>
 
@@ -79,15 +79,15 @@
                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                        Background="Black"/>
 
-            <buttons:AddButton Content="+ Клиенты" Click="AddButton_Click"/>
+            <buttons:AddButton Content="+ Поставщики" Click="AddButton_Click"/>
 
             <TextBox Height="30" Width="300" 
                      Margin="25,25,5,5" FontSize="16"
-                     Style="{StaticResource WaterMarkStyle}" Tag="Поиск клиента" 
+                     Style="{StaticResource WaterMarkStyle}" Tag="Поиск поставщики" 
                      HorizontalAlignment="Left" 
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
 
-            <DataGrid x:Name="clientsDataGrid"
+            <DataGrid x:Name="suppliersDataGrid"
                       Margin="25,25,5,5"
                       HorizontalAlignment="Left"
                       AutoGenerateColumns="False"
@@ -98,7 +98,7 @@
                       ItemsSource="{Binding Suppliers}"
                       SelectedItem="{Binding SelectedSupplier}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Имя клиента" 
+                    <DataGridTextColumn Header="Имя поставщика" 
                                         Binding="{Binding FullName}"
                                         Width="245" FontSize="15"/>
                     <DataGridTextColumn Header="Телефон" 
@@ -114,10 +114,10 @@
             </DataGrid>
         </StackPanel>
 
-        <controls:SupplierDetails x:Name="clientDetails" Grid.Row="0" Grid.RowSpan="2" 
-                                HorizontalAlignment="Right" 
-                                DockPanel.Dock="Right" 
-                                Width="450" 
-                                Visibility="{Binding SupplierDetailsVisibility}"/>
+        <controls:SupplierDetails x:Name="supplierDetails" Grid.Row="0" Grid.RowSpan="2" 
+                                  HorizontalAlignment="Right" 
+                                  DockPanel.Dock="Right" 
+                                  Width="450" 
+                                  Visibility="{Binding SupplierDetailsVisibility}"/>
     </Grid>
 </UserControl>
