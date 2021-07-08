@@ -6,8 +6,6 @@
              xmlns:local="clr-namespace:Reverse.Modules.Forms.Views.Clients"
              xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views.Clients"
              xmlns:buttons="clr-namespace:Reverse.Infrastructure.CustomControls.Buttons;assembly=Reverse.Infrastructure.CustomControls"
-             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-             
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
     <UserControl.Resources>

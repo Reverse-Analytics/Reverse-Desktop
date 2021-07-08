@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using Prism.Commands;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Media.Effects;
+using System.Windows;
 
 namespace Reverse.Modules.Forms.ViewModels
 {
@@ -14,10 +16,16 @@ namespace Reverse.Modules.Forms.ViewModels
         IRegionNavigationJournal _journal;
 
         public DelegateCommand<string> SetSearchTextCommand { get; set; }
+        public DelegateCommand<Client> NavigateToDetailsCommand { get; set; }
+        public DelegateCommand CloseClientDetailsCommand { get; set; }
+        public DelegateCommand<Client> DataGridDoubleClickCommand { get; set; }
 
         private string _searchText;
         private ObservableCollection<Supplier> _suppliers;
         private List<Supplier> _suppliersData;
+
+        public string PersonName { get; set; } = "Some Names";
+        public string ClientsNames { get; set; } = "Client name";
 
         public ObservableCollection<Supplier> Suppliers
         {
@@ -40,6 +48,33 @@ namespace Reverse.Modules.Forms.ViewModels
                 }
                 SetProperty(ref _searchText, value);
             }
+        }
+
+        private double _contentPanelOpacity;
+        private Effect _contentPanelEffect;
+        private bool _contentPanelEnabled;
+
+        public double ContentPanelOpacity
+        {
+            get => _contentPanelOpacity;
+            set => SetProperty(ref _contentPanelOpacity, value);
+        }
+        public Effect ContentPanelEffect
+        {
+            get => _contentPanelEffect;
+            set => SetProperty(ref _contentPanelEffect, value);
+        }
+        public bool ContentPanelEnabled
+        {
+            get => _contentPanelEnabled;
+            set => SetProperty(ref _contentPanelEnabled, value);
+        }
+
+        private Visibility _clientDetailsVisibility;
+        public Visibility ClientDetailsVisibility
+        {
+            get => _clientDetailsVisibility;
+            set => SetProperty(ref _clientDetailsVisibility, value);
         }
 
         public SuppliersViewModel(IRegionManager regionManager) : base(regionManager)
