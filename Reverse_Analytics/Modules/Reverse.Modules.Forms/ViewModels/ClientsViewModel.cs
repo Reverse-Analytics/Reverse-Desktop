@@ -1,25 +1,23 @@
-﻿using Reverse.Infrastructure.Models;
-using Prism.Regions;
-using Reverse_Analytics.Core.MVVM;
+﻿#region usings
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Collections.ObjectModel;
-using Prism.Commands;
-using System.Windows.Media.Effects;
 using System.Windows;
-using GalaSoft.MvvmLight.Command;
+using System.Collections.Generic;
+using System.Windows.Media.Effects;
+using System.Collections.ObjectModel;
+
+using Prism.Regions;
+using Prism.Commands;
+
+using Reverse_Analytics.Core.MVVM;
+using Reverse.Infrastructure.Models;
+#endregion
 
 namespace Reverse.Modules.Forms.ViewModels.Clients
 {
     class ClientsViewModel : RegionViewModelBase
     {
         private IRegionNavigationJournal _journal;
-        /*public static double ControlOpacity { get; set; }
-        public static Effect ControlEffect { get; set; }*/
-
-        public string PersonName { get; set; } = "Some Names";
-        public string ClientsNames { get; set; } = "Client name";
 
         #region Commands
 

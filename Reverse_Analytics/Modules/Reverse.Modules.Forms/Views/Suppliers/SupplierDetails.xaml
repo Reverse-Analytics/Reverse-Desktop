@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views.Clients"
+             xmlns:controls="clr-namespace:Reverse.Modules.Forms.Views.Suppliers"
              mc:Ignorable="d">
     <UserControl.Resources>
         <Style x:Key="closeButton" TargetType="Button">
@@ -80,7 +80,7 @@
                                 BorderThickness="0"
                                 FontSize="18"
                                 Background="White"
-                                Command="{Binding CloseClientDetailsCommand}"
+                                Command="{Binding CloseSupplierDetailsCommand}"
                                 Style="{StaticResource closeButton}">
                             <StackPanel>
                                 <Image Source="C:\Users\khido\source\repos\Reverse-Analytics\Reverse-Desktop\Reverse_Analytics\Reverse_Analytics.Core\Resources\icons\close-icon-gray.png"
@@ -90,7 +90,7 @@
                         </Button>
                     </StackPanel>
 
-                    <Label Content="{Binding CustomerFullName}" 
+                    <Label Content="{Binding SupplierFullName}" 
                                Margin="15,5,5,5" 
                                FontSize="18" Foreground="#808080"
                                HorizontalAlignment="Right"
@@ -104,17 +104,17 @@
                                      Width="100"
                                      HorizontalAlignment="Center"
                                      Style="{DynamicResource TabItemStyle}">
-                                <controls:ClientInformation/>
+                                <controls:SupplierInformation/>
                             </TabItem>
                             <TabItem Header="Сводый отчёт"
                                     Width="130"
                                     Style="{DynamicResource TabItemStyle}">
-                                <controls:ConsolidatedReport/>
+                                <controls:SupplierConsolidatedReport/>
                             </TabItem>
                             <TabItem Header="Статистика"
                                     Width="130"
                                     Style="{DynamicResource TabItemStyle}">
-                                <controls:ClientStatistics/>
+                                <controls:SupplierStatistics/>
                             </TabItem>
                         </TabControl>
                     </StackPanel>

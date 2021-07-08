@@ -9,30 +9,37 @@ using System.Linq;
 using System.Windows.Media.Effects;
 using System.Windows;
 
-namespace Reverse.Modules.Forms.ViewModels
+namespace Reverse.Modules.Forms.ViewModels.Suppliers
 {
     public class SuppliersViewModel : RegionViewModelBase
     {
         IRegionNavigationJournal _journal;
 
+        #region Commands
+
         public DelegateCommand<string> SetSearchTextCommand { get; set; }
-        public DelegateCommand<Client> NavigateToDetailsCommand { get; set; }
-        public DelegateCommand CloseClientDetailsCommand { get; set; }
-        public DelegateCommand<Client> DataGridDoubleClickCommand { get; set; }
+        public DelegateCommand<Supplier> NavigateToDetailsCommand { get; set; }
+        public DelegateCommand CloseSupplierDetailsCommand { get; set; }
+        public DelegateCommand<Supplier> DataGridDoubleClickCommand { get; set; }
 
-        private string _searchText;
-        private ObservableCollection<Supplier> _suppliers;
-        private List<Supplier> _suppliersData;
+        #endregion
 
-        public string PersonName { get; set; } = "Some Names";
-        public string ClientsNames { get; set; } = "Client name";
+        #region Properties
 
-        public ObservableCollection<Supplier> Suppliers
+        private Supplier _selectedSupplier;
+        public Supplier SelectedSupplier
         {
-            get => _suppliers;
-            set => SetProperty(ref _suppliers, value);
+            get => _selectedSupplier;
+            set
+            {
+                SetProperty(ref _selectedSupplier, value);
+                SupplierFullName = _selectedSupplier.FullName;
+                SupplierAddress = _selectedSupplier.Address;
+                SupplierPhoneNumber = _selectedSupplier.PhoneNumber;
+            }
         }
 
+        private string _searchText;
         public string SearchText
         {
             get => _searchText;
@@ -51,34 +58,74 @@ namespace Reverse.Modules.Forms.ViewModels
         }
 
         private double _contentPanelOpacity;
-        private Effect _contentPanelEffect;
-        private bool _contentPanelEnabled;
-
         public double ContentPanelOpacity
         {
             get => _contentPanelOpacity;
             set => SetProperty(ref _contentPanelOpacity, value);
         }
+
+        private Effect _contentPanelEffect;
         public Effect ContentPanelEffect
         {
             get => _contentPanelEffect;
             set => SetProperty(ref _contentPanelEffect, value);
         }
+
+        private bool _contentPanelEnabled;
         public bool ContentPanelEnabled
         {
             get => _contentPanelEnabled;
             set => SetProperty(ref _contentPanelEnabled, value);
         }
 
-        private Visibility _clientDetailsVisibility;
-        public Visibility ClientDetailsVisibility
+        private Visibility _supplierDetailsVisibility;
+        public Visibility SupplierDetailsVisibility
         {
-            get => _clientDetailsVisibility;
-            set => SetProperty(ref _clientDetailsVisibility, value);
+            get => _supplierDetailsVisibility;
+            set => SetProperty(ref _supplierDetailsVisibility, value);
         }
+
+        #endregion
+
+        #region Supplier details Properties
+
+        public string SupplierFullName { get; set; }
+        public string SupplierPhoneNumber { get; set; }
+        public string SupplierAddress { get; set; }
+
+        #endregion
+
+        #region Collections
+
+        private List<Supplier> _suppliersData;
+
+        #region Observable Collections
+
+        private ObservableCollection<Supplier> _suppliers;
+        public ObservableCollection<Supplier> Suppliers
+        {
+            get => _suppliers;
+            set => SetProperty(ref _suppliers, value);
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Constructors
 
         public SuppliersViewModel(IRegionManager regionManager) : base(regionManager)
         {
+            SetSearchTextCommand = new DelegateCommand<string>(SetSearchText);
+            NavigateToDetailsCommand = new DelegateCommand<Supplier>(FastAction);
+            CloseSupplierDetailsCommand = new DelegateCommand(CloseSupplierDetailsControl);
+            DataGridDoubleClickCommand = new DelegateCommand<Supplier>(DataGridDoubleClicked);
+
+            ContentPanelOpacity = 1;
+            ContentPanelEffect = null;
+            ContentPanelEnabled = true;
+            SupplierDetailsVisibility = Visibility.Hidden;
+
             _suppliersData = new List<Supplier>
             {
                 new Supplier("Вазира", "+998(91) 773 21 02"),
@@ -104,6 +151,15 @@ namespace Reverse.Modules.Forms.ViewModels
             _suppliers = new ObservableCollection<Supplier>(_suppliersData);
         }
 
+        #endregion
+
+        #region Command methods
+
+        private void FastAction(Supplier client)
+        {
+            int g = 0;
+        }
+
         private bool CanExecute()
         {
             return true;
@@ -125,5 +181,31 @@ namespace Reverse.Modules.Forms.ViewModels
 
             _journal = navigationContext.NavigationService.Journal;
         }
+
+        private void CloseSupplierDetailsControl()
+        {
+            ContentPanelOpacity = 1;
+            ContentPanelEffect = null;
+            ContentPanelEnabled = true;
+
+            SupplierDetailsVisibility = Visibility.Hidden;
+        }
+
+        private void DataGridDoubleClicked(Supplier selectedSupplier)
+        {
+            ContentPanelOpacity = 0.5;
+            ContentPanelEffect = new BlurEffect();
+            ContentPanelEnabled = false;
+
+            SupplierDetailsVisibility = Visibility.Visible;
+        }
+
+        #endregion
+
+        #region Helper methods
+
+        private void SetSearchText(string text) => SearchText = text;
+
+        #endregion
     }
 }
